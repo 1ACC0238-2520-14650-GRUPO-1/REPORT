@@ -2097,9 +2097,20 @@ Este repositorio concentra el núcleo lógico y funcional del sistema LookUp, ab
 
 Enlace del repositorio: [https://github.com/1ACC0238-2520-14650-GRUPO-1/BACKEND](https://github.com/1ACC0238-2520-14650-GRUPO-1/BACKEND)
 
-### **4.1.3. Source Code Style Guide & Conventions** {#4.1.3.-source-code-style-guide-&-conventions}
-
 ### **4.1.4. Software Deployment Configuration** {#4.1.4.-software-deployment-configuration}
+Se procederá a mostrar donde se desplegó nuestro backend y como se ve visualmente
+
+<p align="center">
+  <img src="Images/back1.jpg" alt="imagen" />
+</p>
+
+<p align="center">
+  <img src="Images/back2.jpg" alt="imagen" />
+</p>
+
+<p align="center">
+  <img src="Images/back3.jpg" alt="imagen" />
+</p>
 
 ## **4.2. Landing Page & Mobile Applications Implementation** {#4.2.-landing-page-&-mobile-applications-implementation}
 
@@ -2109,21 +2120,25 @@ Enlace del repositorio: [https://github.com/1ACC0238-2520-14650-GRUPO-1/BACKEND]
 
 El Sprint Planning es la reunión inicial de cada sprint en la que el equipo define qué se va a desarrollar y cómo se alcanzará ese objetivo. Durante esta sesión, el equipo Scrum se reúne para acordar el Sprint Goal (objetivo del sprint), priorizar las historias de usuario más importantes y dividirlas en tareas específicas y alcanzables. Esta etapa garantiza que todos los miembros compartan una visión común, comprendan el alcance del trabajo y organicen sus esfuerzos de manera eficiente, manteniendo siempre el foco en entregar valor real al usuario. 
 
-#### **4.2.1.2. Sprint Backlog 1** {#4.2.1.2.-sprint-backlog-1}
-
-#### **4.2.1.3. Development Evidence for Sprint Review** {#4.2.1.3.-development-evidence-for-sprint-review}
-
-#### **4.2.1.4. Testing Suite Evidence for Sprint Review** {#4.2.1.4.-testing-suite-evidence-for-sprint-review}
+| Sprint \# | Sprint 1 |
+| :---- | :---- |
+| **Sprint Planning Background**  |  |
+| Date | 2025-10-01 |
+| Time | 9:30 PM |
+| Location | Reunión virtual |
+| Prepared By | Luis Rodríguez, Santiago Cárdenas |
+| Attendees (to planning meeting) | Luis Rodríguez / Santiago Cárdenas / Santiago Suárez / Gustavo Román / Elvia Rodríguez |
+| **Sprint Goal & User Stories**  |  |
+| Sprint 1 Goal | **Nuestro objetivo principal** es desarrollar una versión funcional y visualmente atractiva de la plataforma **LookUp**, que incluya la **landing page**, el **frontend** y el **backend** inicial del sistema. **Se busca** presentar la propuesta de valor de LookUp de manera clara, permitir la navegación fluida entre secciones clave e integrar las primeras funciones de registro y gestión de postulaciones. **Esto se confirmará cuando** los usuarios puedan acceder a la landing page informativa, registrarse correctamente, navegar entre las secciones principales y visualizar información almacenada desde el backend de manera eficiente y segura. |
+| Sprint 1 Velocity | 20 |
+| Sum of Story Points | 20 |
 
 #### **4.2.1.5. Execution Evidence for Sprint Review** {#4.2.1.5.-execution-evidence-for-sprint-review}
 
-#### **4.2.1.6. Services Documentation Evidence for Sprint Review**  {#4.2.1.6.-services-documentation-evidence-for-sprint-review}
-
-#### **4.2.1.7. Software Deployment Evidence for Sprint Review** {#4.2.1.7.-software-deployment-evidence-for-sprint-review}
-
-#### **4.2.1.8. Team Collaboration Insights during Sprint** {#4.2.1.8.-team-collaboration-insights-during-sprint}
-
-
+Hemos podido publicar nuestros avances por medio de los siguientes enlaces
+Link del backend publicado: http://ec2-98-89-44-151.compute-1.amazonaws.com/docs#/
+Link de la landing page publicada: https://1acc0238-2520-14650-grupo-1.github.io/LANDING-PAGE/
+Con respecto a nuestra aplicación, nos quedó pendiente publicarla, lo cual lo haremos en el siguiente avance
 
 # **CONCLUSIONES Y RECOMENDACIONES**
 
@@ -2137,6 +2152,14 @@ El Sprint Planning es la reunión inicial de cada sprint en la que el equipo def
   Los usuarios consideran crucial recibir retroalimentación de los procesos de selección y estadísticas de avance. Esto no solo mejora la organización, sino que también actúa como motivador y ayuda en la toma de decisiones estratégicas.  
 * **Factores de adopción clave:**  
   La interfaz intuitiva, el acceso móvil y la simplicidad en el registro son condiciones indispensables para la aceptación de la app. Además, la integración de métricas y logros puede aumentar la motivación y el uso constante.
+* **Integración efectiva del ecosistema de LookUp:**
+   El desarrollo de la landing page, el frontend y el backend permitió establecer una base sólida para la plataforma, integrando los distintos componentes del sistema en un flujo coherente y funcional. Esto demostró la importancia de planificar la arquitectura desde etapas tempranas, asegurando una correcta comunicación entre la interfaz de usuario y los servicios del servidor.
+* **Enfoque centrado en la experiencia del usuario:**
+   A lo largo del sprint se priorizó la simplicidad, claridad y consistencia visual, garantizando que cada elemento de la interfaz respondiera a necesidades reales de los usuarios. Esta orientación hacia la usabilidad facilitó un diseño intuitivo, accesible y alineado con la propuesta de valor de LookUp.
+* **Trabajo colaborativo y gestión ágil:**
+   La coordinación entre los integrantes del equipo permitió cumplir los objetivos definidos dentro del tiempo estimado, aplicando metodologías ágiles que promovieron una comunicación constante y la rápida resolución de incidencias técnicas.
+* **Base tecnológica escalable:**
+   Las decisiones tomadas en este sprint sientan las bases para futuras iteraciones del proyecto, ya que el código estructurado, modular y conectado mediante un backend funcional permitirá incorporar nuevas funcionalidades sin comprometer el rendimiento o la estabilidad del sistema.
 
 **Recomendaciones:**
 
@@ -2146,6 +2169,14 @@ El Sprint Planning es la reunión inicial de cada sprint en la que el equipo def
   Asegurar que la aplicación sea ligera, responsiva y con un diseño intuitivo. Incluir tutoriales interactivos (onboarding) para que los nuevos usuarios entiendan rápidamente cómo registrar postulaciones, adjuntar documentos y revisar métricas.  
 * **Ampliar la personalización:**  
   Incluir filtros avanzados y sugerencias según perfil académico, experiencia y sector laboral. Esto aumentará la relevancia de la información y reducirá la frustración de revisar ofertas poco alineadas.
+* **Ampliar las pruebas de usabilidad:**
+   Antes de avanzar con la siguiente fase, se recomienda realizar sesiones de prueba con usuarios reales para identificar posibles puntos de fricción en la navegación, formular mejoras en la disposición de componentes y validar la efectividad de los flujos creados.
+* **Optimizar la documentación técnica:**
+   Mantener una documentación actualizada del código, endpoints del backend y estructura del frontend facilitará la comprensión del sistema para nuevos colaboradores y reducirá errores en futuras integraciones.
+* **Implementar monitoreo y métricas:**
+   Se aconseja integrar herramientas de análisis y monitoreo que permitan observar el comportamiento de los usuarios en la landing y la aplicación, recopilando datos útiles para mejorar la experiencia y la conversión.
+* **Priorizar la seguridad y escalabilidad:**
+   En los próximos sprints, se recomienda reforzar la seguridad del backend, optimizar las consultas a la base de datos y preparar la infraestructura para soportar un mayor número de usuarios conforme LookUp crezca.
 
 # **BIBLIOGRAFÍA**
 
