@@ -2347,6 +2347,261 @@ Este modelo se apoya en:
   <img src="Images/bdBC4.png" alt="imagen" />
 </p>
 
+# **Capítulo III: Solution UI/UX Design**
+
+## **3.1. Product Design**
+
+### **3.1.1. Style Guidelines**
+
+LookUp es una aplicación móvil diseñada para transformar la forma en que las personas gestionan su búsqueda de empleo. Su propósito es ayudar a estudiantes, egresados y profesionales en transición a organizar, seguir y mejorar sus procesos de postulación. La plataforma centraliza toda la información relevante en un entorno digital accesible, intuitivo y visualmente coherente con los hábitos de los usuarios actuales. Además, LookUp fomenta una experiencia motivadora a través de métricas simples y logros que impulsan la constancia en el proceso de búsqueda laboral.
+
+Esta sección presenta una guía estructurada que reúne todos los elementos visuales y de diseño utilizados en la aplicación LookUp. Se incluyen recursos como tipografías, paleta de colores y componentes de interfaz que garantizan una identidad visual unificada y profesional. El objetivo es mantener coherencia en cada pantalla, facilitando la navegación y reforzando los valores de la marca: organización, claridad y apoyo al crecimiento profesional del usuario. Gracias a esta consistencia visual, la experiencia se percibe fluida, confiable y alineada con la misión de LookUp de acompañar a cada postulante en su camino hacia nuevas oportunidades laborales.
+
+### **3.1.1.1. General Style Guidelines**
+
+El branding de LookUp constituye la base de su identidad visual, creada para transmitir sus valores esenciales: organización, claridad y crecimiento profesional. A través de una estética moderna, confiable y accesible, la marca refleja su propósito de acompañar al usuario en cada etapa de su búsqueda laboral, brindando una experiencia visual coherente y motivadora.
+
+El logotipo, la paleta de colores y la tipografía de LookUp proyectan profesionalismo y dinamismo, evocando confianza, enfoque y progreso. Estos elementos comunican la facilidad con la que los usuarios pueden registrar sus postulaciones, gestionar su información y seguir su evolución de manera ordenada. El branding está alineado con la misión de la plataforma: ayudar a cada postulante a alcanzar sus metas laborales mediante una herramienta intuitiva, optimista y centrada en el usuario.
+
+#### **3.1.1.1.1. Tipografía**
+
+La tipografía de LookUp cumple un papel clave en la construcción de su identidad visual, transmitiendo profesionalismo, claridad y cercanía en cada punto de interacción con el usuario. La elección de una fuente moderna y limpia garantiza una lectura fluida y cómoda tanto en dispositivos móviles como en pantallas de mayor tamaño, reforzando la coherencia y accesibilidad del diseño.
+
+Toda la interfaz de LookUp utiliza la tipografía **Inter**, seleccionada por su legibilidad, neutralidad y versatilidad. Su diseño geométrico, equilibrado y contemporáneo proyecta orden y confianza, cualidades que reflejan el propósito de la plataforma: ayudar al usuario a organizar su proceso de búsqueda laboral de manera clara y eficiente.
+
+Se emplean diferentes pesos tipográficos (*Light, Regular, Medium y Bold*) para establecer jerarquías visuales entre títulos, subtítulos y contenido informativo, manteniendo consistencia y armonía en toda la aplicación.
+
+#### **3.1.1.1.2. Colores**
+
+La paleta cromática de LookUp está inspirada en los tonos del logotipo, buscando transmitir serenidad, confianza y enfoque. Los colores elegidos refuerzan la identidad profesional de la marca sin perder accesibilidad ni frescura visual.
+
+- **Azul Profundo:** Representa confianza, estabilidad y profesionalismo. Utilizado en botones, encabezados y elementos interactivos clave.  
+- **Celeste:** Aporta equilibrio y frescura; se usa en fondos secundarios y detalles visuales.  
+- **Blanco:** Garantiza limpieza y legibilidad; sirve como base para resaltar contenido.  
+- **Gris Suave:** Utilizado en fondos neutros y secciones informativas; aporta modernidad y descanso visual.  
+
+La combinación de estos tonos genera una interfaz ordenada y profesional que inspira confianza sin resultar monótona.
+
+#### **3.1.1.1.3. Espaciado**
+
+El sistema de espaciado en LookUp está diseñado para ofrecer una experiencia visual limpia y respirable, basada en múltiplos de **8 px (8, 16, 24, 32, 48)**. Esta escala se aplica consistentemente en márgenes, paddings y separación de componentes.
+
+Este enfoque contribuye a la claridad visual y facilita que los usuarios se enfoquen en la información clave sin distracciones. También refuerza la coherencia entre pantallas y mejora la navegabilidad general.
+
+#### **3.1.1.1.4. Iconografía**
+
+Los íconos de LookUp funcionan como elementos visuales de apoyo, facilitando la comprensión inmediata de acciones y estados dentro de la aplicación. Su estilo simple, lineal y minimalista mantiene la coherencia visual de la plataforma y favorece una navegación intuitiva.
+
+#### **3.1.1.1.5. Tono de comunicación y lenguaje aplicado**
+
+El tono de comunicación de LookUp es **profesional, claro y motivador**, diseñado para transmitir confianza y acompañamiento al usuario. Se busca evitar tecnicismos innecesarios y mantener mensajes optimistas y organizados.
+
+### **3.1.1.2. Web Style Guidelines**
+
+El sistema visual de LookUp adopta una línea gráfica moderna, clara y coherente. El uso de tipografía Inter refuerza la armonía visual, mientras que la jerarquización de textos basada en pesos tipográficos y color otorga estructura sin saturar.
+
+La paleta basada en azul profundo y celeste guía al usuario visualmente, especialmente en elementos interactivos. Los bordes suavizados y sombras ligeras aportan cercanía y profesionalismo. La iconografía lineal y minimalista completa una interfaz limpia y coherente.
+
+
+## **3.1.2. Information Architecture**
+
+La arquitectura de información permite que el usuario navegue e interactúe de forma clara y natural, facilitando una experiencia fluida que mantiene su interés.
+
+### **3.1.2.1. Organization Systems**
+
+Se plantea un sistema jerárquico dividido en dos partes: **Landing Page** y **Aplicación LookUp**.
+
+#### **1. Landing Page**
+
+Es el punto inicial de contacto, diseñada para atraer e informar antes del registro. Incluye:
+
+- Sección hero  
+- Funcionalidades principales  
+- Explicación del flujo de uso  
+- Reseñas  
+- Formulario de contacto  
+
+El flujo garantiza que el usuario reciba información esencial antes de registrarse.
+
+#### **2. Aplicación LookUp**
+
+Organiza sus funciones en una estructura basada en tareas:
+
+- **Postulaciones:** lista completa con detalle.  
+- **Estado de Postulación:** evolución del proceso.  
+- **Métricas:** contadores simples.  
+- **Notificaciones:** feedback y actualizaciones.  
+- **Perfil:** datos personales y CV.  
+
+La navegación es circular e intuitiva.
+
+
+### **3.1.2.2. Labelling Systems**
+
+El sistema de etiquetado usa nombres familiares y simples.
+
+#### **Landing Page**
+
+Menú principal:
+
+- Inicio  
+- Funciones  
+- Cómo Funciona  
+- Nosotros  
+- Contáctanos  
+- Descargar App  
+
+#### **Aplicación móvil**
+
+Etiquetas en la barra inferior:
+
+- Inicio  
+- Ofertas  
+- Métricas  
+- Notificaciones  
+- Perfil  
+
+
+### **3.1.2.3. SEO Tags and Meta Tags**
+
+**Título:** “LookUp”
+
+**Meta Tags principales:**  
+Se utilizan los predeterminados, asegurando compatibilidad en dispositivos y navegadores.
+
+**Descripción:**  
+LookUp ayuda a gestionar postulaciones laborales, documentos y progreso de manera centralizada.
+
+**Keywords:**  
+empleo, prácticas, postulaciones, seguimiento, métricas, organización profesional.
+
+
+### **3.1.2.4. Searching Systems**
+
+El sistema de búsqueda permite encontrar vacantes o postulaciones rápidamente:
+
+- Barra de búsqueda por empresa o puesto  
+- Filtros por estado  
+- Ordenamiento por fecha o relevancia  
+- Lista de ofertas categorizadas  
+
+La retroalimentación es inmediata y la experiencia ágil.
+
+
+### **3.1.2.5. Navigation Systems**
+
+Los sistemas de navegación buscan fluidez y simplicidad.
+
+En la **app**, la barra inferior fija contiene:
+
+- Inicio  
+- Ofertas  
+- Métricas  
+- Feedback  
+- Perfil  
+
+También existen accesos directos dentro de cada vista.
+
+En la **Landing Page**, un menú superior con:
+
+- Inicio  
+- Funciones  
+- Cómo Funciona  
+- Nosotros  
+- Contáctanos  
+- Descargar App  
+
+El footer contiene enlaces secundarios como políticas y redes.
+
+
+## **3.1.3. Landing Page UI Design**
+
+La UI de la Landing Page representa visualmente la identidad moderna, profesional y accesible de LookUp. Combina ilustraciones simples, tipografía limpia y colores corporativos para generar confianza y guiar al usuario hacia la descarga o registro. Su jerarquía visual y componentes interactivos reflejan las decisiones estructurales del diseño centrado en el usuario.
+
+### **3.1.3.1. Landing Page Wireframe**
+
+El wireframe de la landing page de LookUp representa la estructura base de la página principal del proyecto, enfocada en comunicar de forma clara la propuesta de valor y guiar al usuario hacia la acción principal: registrarse o conocer más sobre la aplicación. En la parte superior se encuentra el encabezado con el menú de navegación y el botón de acceso, seguido de una sección hero amplia con un texto destacado y una llamada a la acción visible.
+
+A continuación, se incluye un bloque informativo con imagen y descripción, diseñado para presentar brevemente los beneficios o el propósito del producto. Luego, se muestran secciones organizadas por funciones y características, distribuidas en tarjetas visuales que mantienen un equilibrio entre texto e íconos.
+
+Más abajo, una sección de testimonios o reseñas aporta credibilidad y confianza, mientras que el bloque de contacto al final ofrece un formulario y un mapa de ubicación para la interacción directa con el usuario. Finalmente, el pie de página (footer) contiene enlaces legales y de soporte, manteniendo la coherencia visual del sitio. En conjunto, este wireframe define una navegación lineal, clara y centrada en la conversión, asegurando que cada sección cumpla un propósito informativo y orientado al usuario.
+
+<p align="center">
+  <img src="Images/landingpagewireframe.png" alt="imagen" />
+</p>
+
+### **3.1.3.2. Landing Page Mock-up**
+
+El mockup de la landing page de LookUp muestra la versión visual final del diseño, donde se consolidan los elementos estructurales definidos en el wireframe con la identidad gráfica de la marca. Desde el inicio, la página busca transmitir profesionalismo y confianza a través de su paleta de azules institucionales, tipografía Inter, y un uso equilibrado de imágenes e ilustraciones.
+
+En la parte superior, el encabezado con menú de navegación facilita el acceso rápido a las secciones principales (Inicio, Funciones, Cómo funciona, Contacto, etc.), junto con un botón destacado para iniciar sesión. La sección principal (hero) presenta un mensaje central que resume el propósito de LookUp (ayudar a los usuarios a gestionar sus postulaciones) acompañado de un botón de acción que invita al registro inmediato.
+
+Más abajo, la sección “Acerca de” combina una ilustración con un texto introductorio que explica la propuesta de valor de la aplicación. Luego, el apartado de “Funciones” organiza en tarjetas limpias y simétricas los principales beneficios del sistema (seguimiento de postulaciones, gestión de documentos, métricas, alertas y filtros). La sección “¿Cómo funciona?” continúa el flujo explicativo, guiando paso a paso al usuario en el proceso de uso de la app.
+
+Posteriormente, la sección de “Reseñas” añade un componente humano y de confianza mediante testimonios visuales con nombre, ocupación y calificación. Finalmente, la sección “Contáctanos” ofrece un mapa integrado de ubicación y un formulario de contacto para facilitar la comunicación directa. El footer cierra la estructura con enlaces informativos y legales, manteniendo la coherencia estética y funcional.
+
+En conjunto, este diseño logra una navegación intuitiva, una jerarquía clara y una presentación profesional, alineada con la misión de LookUp de conectar a los usuarios con oportunidades laborales de forma organizada y accesible.
+
+<p align="center">
+  <img src="Images/landingpagemockup.png" alt="imagen" />
+</p>
+
+### **3.1.4. Mobile Applications UX/UI Design**
+
+### **3.1.4.1. Mobile Applications Wireframes**
+
+Los wireframes de la aplicación móvil de LookUp constituyen una primera representación estructural del diseño de la plataforma, centrada en la organización del contenido y la distribución de los elementos esenciales en cada pantalla. Esta fase inicial tiene como objetivo definir la manera en que los usuarios interactuarán con las principales funciones del sistema (como la gestión de postulaciones, métricas o perfil) sin involucrar todavía aspectos visuales o estéticos.
+
+Al enfocarse en la usabilidad, jerarquía y claridad funcional, los wireframes permiten validar la lógica de navegación y asegurar que cada componente cumpla su propósito dentro del flujo general de la aplicación. De esta manera, sirven como base para el desarrollo posterior del diseño visual, garantizando una experiencia de usuario coherente, intuitiva y alineada con los objetivos de LookUp.
+
+Los wireframes de la aplicación móvil de LookUp representan la estructura inicial del flujo de interacción del usuario con la plataforma, mostrando de forma clara y ordenada la disposición de los elementos clave en cada pantalla. Este conjunto abarca desde la pantalla de inicio de sesión y registro, donde se definen los campos principales para ingresar credenciales, hasta las vistas funcionales dedicadas a la gestión de postulaciones, métricas, feedbacks y perfil del usuario. Cada pantalla mantiene una composición limpia y jerarquizada, priorizando la legibilidad y la simplicidad visual sobre los aspectos estéticos, lo que permite concentrarse en la funcionalidad y navegación.
+
+El flujo inicia con una pantalla de bienvenida, seguida de las secciones de autenticación (inicio de sesión, registro y recuperación de contraseña), diseñadas con campos alineados verticalmente y botones de acción bien diferenciados. Luego, se despliegan las vistas centrales de la aplicación: la pantalla principal, donde el usuario visualiza un resumen de sus postulaciones; la lista de vacantes, con un buscador y filtros que optimizan la exploración de ofertas; y la pantalla de estado de postulación, que detalla el progreso de cada aplicación mediante una línea temporal de etapas.
+
+Además, se incluyen las secciones de métricas, donde se presentan contadores de desempeño; notificaciones y feedbacks, que muestran actualizaciones sobre el proceso de selección; y finalmente, el perfil del usuario, que reúne información personal y documentos como el CV. La barra inferior de navegación está presente en todas las pantallas, garantizando una experiencia coherente y accesible, con íconos representativos que guían al usuario entre las secciones principales: Inicio, Ofertas, Métricas, Feedback y Perfil.
+
+En conjunto, estos wireframes establecen la base funcional y lógica del diseño de LookUp, asegurando una navegación fluida, una estructura bien definida y una experiencia centrada en la eficiencia del proceso de búsqueda y seguimiento laboral.
+
+<p align="center">
+  <img src="Images/mobilewireframes.png" alt="imagen" />
+</p>
+
+### **3.1.4.2. Mobile Applications Wireflow Diagrams**
+
+### **3.1.4.3. Mobile Applications Mock-Ups**
+
+Los mockups de la aplicación móvil de LookUp presentan una versión más completa y visualmente desarrollada del diseño, mostrando cómo las decisiones de estructura y usabilidad definidas en los wireframes se traducen en una interfaz final realista, moderna y funcional. En esta etapa, se integran los colores institucionales del proyecto, la tipografía Inter, los íconos de navegación y los estilos de botones e inputs, generando una experiencia visual coherente con la identidad de la marca. Cada pantalla fue construida para reflejar con precisión los flujos principales del usuario dentro de la aplicación, asegurando claridad, consistencia y jerarquía en todos los componentes.
+
+El recorrido comienza con la pantalla de bienvenida, donde se muestra el logotipo de LookUp sobre un fondo en tonos azules que refuerzan la identidad profesional y tecnológica del producto. A continuación, las vistas de inicio de sesión, registro y recuperación de contraseña presentan formularios limpios y minimalistas, con validaciones visuales claras para guiar al usuario en el ingreso de datos.
+
+Luego, la pantalla de inicio muestra un saludo personalizado y un resumen de las postulaciones activas, actuando como punto central del flujo principal. En la sección de Postulaciones, se observa una lista con tarjetas individuales que incluyen nombre de la empresa, puesto, estado del proceso y fecha, junto con un buscador y filtros de estado que facilitan la exploración.
+
+La pantalla de Detalles de la Postulación destaca por su línea de tiempo visual que muestra el progreso de cada aplicación (creada, entrevista, revisión), mientras que la de Métricas permite al usuario conocer rápidamente sus estadísticas de postulaciones, entrevistas, ofertas y rechazos mediante contadores simples y actualizables.
+
+Las secciones de Feedbacks y Notificaciones centralizan la comunicación entre empresas y postulantes, con mensajes organizados por estado y retroalimentaciones detalladas que aportan valor al proceso. Finalmente, el Perfil del Usuario reúne la información personal, datos de contacto y un apartado para la gestión del CV, fomentando la personalización y la actualización constante del perfil profesional.
+
+En conjunto, estos mockups evidencian un diseño consistente, accesible y enfocado en la eficiencia del usuario, donde cada elemento (desde los colores hasta la disposición del contenido) contribuye a reforzar la misión de LookUp: ayudar a las personas a gestionar y optimizar su búsqueda laboral de forma clara, ordenada y efectiva.
+
+<p align="center">
+  <img src="Images/mobilemockups1.png" alt="imagen" />
+</p>
+
+<p align="center">
+  <img src="Images/mobilemockups2.png" alt="imagen" />
+</p>
+
+### **3.1.4.4. Mobile Applications User Flow Diagrams**
+
+
+### **3.1.4.5. Mobile Applications Prototyping**
+
+Con el propósito de evaluar y optimizar la experiencia de usuario y la accesibilidad antes del desarrollo definitivo, se elaboró un prototipo interactivo de la aplicación LookUp, centrado en la navegación móvil. Este modelo permite simular de manera realista el recorrido completo del usuario, reproduciendo la interacción con las diferentes secciones, pantallas y elementos de la interfaz tal como funcionarán en la versión final.
+
+El prototipo fue construido siguiendo principios de arquitectura de información clara, jerarquía visual bien definida y diseño inclusivo, asegurando que cada acción sea comprensible y accesible. Se cuidaron aspectos como la legibilidad, el contraste de colores, la consistencia en los botones e íconos, y la retroalimentación visual de cada interacción, con el objetivo de ofrecer una navegación fluida, intuitiva y sin barreras.
+
+Desarrollado a partir de mockups de alta fidelidad, este prototipo actúa como una representación precisa de la futura interfaz de LookUp. Su función es validar la lógica de navegación, comprobar la usabilidad de los flujos de registro, postulación, seguimiento y gestión de perfil, además de detectar posibles puntos de mejora antes del desarrollo final. De esta manera, se consolida como una herramienta clave para garantizar una experiencia coherente, eficiente y accesible en todo el entorno digital de LookUp.
+
+Link del prototipo: [https://www.figma.com/design/XMEVuN6R9wh16bDPYJNE4m/LookUp?node-id=0-1&p=f](https://www.figma.com/design/XMEVuN6R9wh16bDPYJNE4m/LookUp?node-id=0-1&p=f)
 
 
 
