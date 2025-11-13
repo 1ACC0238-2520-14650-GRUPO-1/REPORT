@@ -2817,7 +2817,7 @@ Los puntos clave de esta evidencia son:
   - **GET /postulaciones** – Listar las postulaciones de un usuario (en este sprint, pruebas con usuarios de prueba).
   - **GET /metricas** (o ruta equivalente) – Devolver los contadores de postulaciones por estado (postulaciones enviadas, ofertas, entrevistas, rechazos) en tiempo real.
 - La documentación de estos servicios puede visualizarse en el endpoint de documentación de FastAPI desplegado en el backend:
-  - `https://backend-ufl2-dbeapzevl-glitter22s-projects.vercel.app/docs`
+  - `https://backend-ufl2-git-main-glitter22s-projects.vercel.app/docs`
 
 Aún no se documentaron ni estabilizaron los endpoints relacionados con:
 
@@ -2851,7 +2851,7 @@ Las evidencias de despliegue son las siguientes:
 
    - El backend se implementó con **FastAPI** siguiendo la arquitectura por Bounded Contexts descrita en el capítulo de diseño.
    - Se desplegó en un entorno accesible mediante la siguiente URL de pruebas:  
-     `https://backend-ufl2-dbeapzevl-glitter22s-projects.vercel.app/docs`
+     `https://backend-ufl2-git-main-glitter22s-projects.vercel.app/docs`
    - Durante el sprint se configuró el despliegue para que el servicio backend quedara disponible como API REST, permitiendo:
      - Probar endpoints mediante la interfaz `/docs`.
      - Verificar la creación y consulta de postulaciones.
@@ -3054,21 +3054,13 @@ Los grupos de servicios más relevantes que quedaron disponibles al cierre del s
   - `GET /postulaciones/search` – Buscar por empresa/puesto.
   - `GET /postulaciones/filter` – Filtrar por estado.
   - `GET /postulaciones/order` – Ordenar por fecha o estado.
-- **Gestión de ofertas y postulaciones (empresa):**
-  - `POST /empresas/ofertas` – Crear nueva oferta laboral.
-  - `PUT /empresas/ofertas/{id}` – Editar oferta existente.
-  - `PUT /empresas/ofertas/{id}/cerrar` – Cerrar oferta.
-  - `GET /empresas/ofertas` – Listar ofertas de la empresa autenticada.
-  - `GET /empresas/ofertas/{id}/postulantes` – Ver postulantes asociados a una oferta.
-  - `PUT /empresas/postulaciones/{id}/estado` – Actualizar estado de postulación (pendiente, en revisión, entrevista, logrado, rechazo).
-  - `POST /empresas/postulaciones/{id}/feedback` – Registrar feedback hacia un postulante.
 - **Métricas:**
   - `GET /metricas/postulante` – Métricas por postulante (postulaciones, entrevistas, ofertas, rechazos).
   - `GET /metricas/empresa` – Métricas por empresa (ofertas activas, postulaciones recibidas, candidatos pendientes, etc.).
 
 Toda esta información puede visualizarse, probarse y explorarse en la interfaz de documentación del backend desplegado:
 
-- `https://backend-ufl2-dbeapzevl-glitter22s-projects.vercel.app/docs`
+- `https://backend-ufl2-git-main-glitter22s-projects.vercel.app/docs`
 
 En sprints posteriores se elaborará una sección formal de documentación de servicios en el informe (tablas de endpoints, ejemplos de peticiones/respuestas y códigos de estado), reutilizando esta definición técnica generada por FastAPI como fuente principal.
 
@@ -3079,7 +3071,7 @@ Durante el Sprint 2 se actualizaron y/o añadieron despliegues en los distintos 
 1. **Backend de LookUp**
 
    - El backend se mantuvo desplegado en el mismo servidor:
-     - URL de documentación y pruebas: `https://backend-ufl2-dbeapzevl-glitter22s-projects.vercel.app/docs`
+     - URL de documentación y pruebas: `https://backend-ufl2-git-main-glitter22s-projects.vercel.app/docs`
    - Se desplegó una **nueva versión** que incluye:
      - Autenticación completa con IAM.
      - Endpoints de perfil, documentos, búsqueda/filtros, ofertas para empresas y métricas ampliadas.
