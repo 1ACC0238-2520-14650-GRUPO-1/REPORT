@@ -2817,7 +2817,7 @@ Los puntos clave de esta evidencia son:
   - **GET /postulaciones** – Listar las postulaciones de un usuario (en este sprint, pruebas con usuarios de prueba).
   - **GET /metricas** (o ruta equivalente) – Devolver los contadores de postulaciones por estado (postulaciones enviadas, ofertas, entrevistas, rechazos) en tiempo real.
 - La documentación de estos servicios puede visualizarse en el endpoint de documentación de FastAPI desplegado en el backend:
-  - `http://ec2-98-89-44-151.compute-1.amazonaws.com/docs#/`
+  - `https://backend-ufl2-dbeapzevl-glitter22s-projects.vercel.app/docs`
 
 Aún no se documentaron ni estabilizaron los endpoints relacionados con:
 
@@ -2851,7 +2851,7 @@ Las evidencias de despliegue son las siguientes:
 
    - El backend se implementó con **FastAPI** siguiendo la arquitectura por Bounded Contexts descrita en el capítulo de diseño.
    - Se desplegó en un entorno accesible mediante la siguiente URL de pruebas:  
-     `http://ec2-98-89-44-151.compute-1.amazonaws.com/docs#/`
+     `https://backend-ufl2-dbeapzevl-glitter22s-projects.vercel.app/docs`
    - Durante el sprint se configuró el despliegue para que el servicio backend quedara disponible como API REST, permitiendo:
      - Probar endpoints mediante la interfaz `/docs`.
      - Verificar la creación y consulta de postulaciones.
@@ -3068,7 +3068,7 @@ Los grupos de servicios más relevantes que quedaron disponibles al cierre del s
 
 Toda esta información puede visualizarse, probarse y explorarse en la interfaz de documentación del backend desplegado:
 
-- `http://ec2-98-89-44-151.compute-1.amazonaws.com/docs#/`
+- `https://backend-ufl2-dbeapzevl-glitter22s-projects.vercel.app/docs`
 
 En sprints posteriores se elaborará una sección formal de documentación de servicios en el informe (tablas de endpoints, ejemplos de peticiones/respuestas y códigos de estado), reutilizando esta definición técnica generada por FastAPI como fuente principal.
 
@@ -3079,7 +3079,7 @@ Durante el Sprint 2 se actualizaron y/o añadieron despliegues en los distintos 
 1. **Backend de LookUp**
 
    - El backend se mantuvo desplegado en el mismo servidor:
-     - URL de documentación y pruebas: `http://ec2-98-89-44-151.compute-1.amazonaws.com/docs#/`
+     - URL de documentación y pruebas: `https://backend-ufl2-dbeapzevl-glitter22s-projects.vercel.app/docs`
    - Se desplegó una **nueva versión** que incluye:
      - Autenticación completa con IAM.
      - Endpoints de perfil, documentos, búsqueda/filtros, ofertas para empresas y métricas ampliadas.
