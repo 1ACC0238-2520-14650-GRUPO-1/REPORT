@@ -2603,9 +2603,508 @@ Desarrollado a partir de mockups de alta fidelidad, este prototipo actúa como u
 
 Link del prototipo: [https://www.figma.com/design/XMEVuN6R9wh16bDPYJNE4m/LookUp?node-id=0-1&p=f](https://www.figma.com/design/XMEVuN6R9wh16bDPYJNE4m/LookUp?node-id=0-1&p=f)
 
+### **Capítulo IV: Product Implementation & Validation**
+
+### **4.1. Software Configuration Management**
+
+La gestión de proyectos desempeña un papel esencial en el desarrollo de software, ya que facilita la planificación, organización y control de las actividades necesarias para alcanzar los objetivos del proyecto. Las herramientas de gestión permiten asignar responsabilidades, monitorear el progreso y coordinar esfuerzos, promoviendo una colaboración más eficiente entre los miembros del equipo y una comunicación fluida durante todo el proceso de desarrollo.
+
+### **4.1.1. Software Development Environment Configuration**
+
+El diseño de interfaces de usuario (UI) y experiencia de usuario (UX) resulta clave para desarrollar aplicaciones y sistemas que sean intuitivos, visualmente atractivos y fáciles de usar. Las herramientas de diseño UX/UI permiten elaborar prototipos, wireframes y maquetas interactivas que pueden evaluarse con los usuarios antes de su desarrollo final, garantizando así una mejor experiencia de uso.
+
+**Figma:**  
+Figma es una herramienta de diseño colaborativo en la nube que facilita la creación de interfaces y prototipos interactivos. Su funcionamiento en línea permite que varios miembros del equipo trabajen simultáneamente en un mismo proyecto, realizando ediciones y revisiones en tiempo real. Gracias a esta colaboración dinámica, Figma se adapta perfectamente a entornos de trabajo ágiles, donde el diseño y el desarrollo avanzan de manera paralela.
+
+El desarrollo de software necesita entornos especializados donde los programadores puedan escribir, probar y depurar código de manera eficiente. Los entornos de desarrollo integrados (IDE) y los editores avanzados proporcionan funciones como resaltado de sintaxis, control de versiones, autocompletado y herramientas de depuración, incrementando la productividad y facilitando el trabajo colaborativo dentro del equipo.
+
+**Android Studio:**  
+Android Studio es el entorno de desarrollo oficial para aplicaciones Android, creado por Google. Ofrece herramientas para programar, compilar, probar y optimizar aplicaciones móviles. Sus principales características incluyen el emulador integrado, depurador avanzado e integración con Git, lo que permite un flujo de trabajo ágil y organizado. Gracias a su compatibilidad con Kotlin y Java, se convierte en una herramienta esencial para desarrolladores que construyen aplicaciones modernas y eficientes.
+
+**Visual Studio Code:**  
+Visual Studio Code es un editor de código ligero y multiplataforma desarrollado por Microsoft. Destaca por su versatilidad, facilidad de uso y alto nivel de personalización. Soporta una gran variedad de lenguajes de programación y permite instalar extensiones que añaden soporte para depuración, Git, testing y colaboración en tiempo real mediante Live Share. Su interfaz intuitiva y rendimiento optimizado lo convierten en una excelente opción para el desarrollo web y multiplataforma.
+
+**Flutter:**  
+Flutter es un framework de desarrollo multiplataforma creado por Google, utilizado para construir aplicaciones móviles, web y de escritorio con un solo código base. En el proyecto LookUp, Flutter se emplea para desarrollar la versión dirigida a empresas (empleadores), permitiendo una interfaz moderna, responsiva y coherente con los lineamientos del producto. Su motor gráfico integrado y widgets personalizados hacen posible crear interfaces fluidas y de alto rendimiento, manteniendo la consistencia visual entre plataformas.
+
+El control de versiones es una parte esencial del proceso de desarrollo de software, ya que permite registrar, gestionar y rastrear los cambios realizados en el código fuente. Esta práctica fomenta la colaboración entre los miembros del equipo, permitiendo que cada desarrollador trabaje en su propia copia del proyecto sin afectar el código principal. Luego, los cambios pueden integrarse de forma controlada, evitando conflictos y manteniendo un historial detallado de todas las modificaciones.
+
+**Git (CLI/GUI):**  
+Git es un sistema de control de versiones distribuido ampliamente utilizado en la industria. Facilita la gestión local y remota de código, permitiendo crear ramas para nuevas características, realizar pruebas y fusionar cambios de forma controlada. Puede usarse tanto desde la línea de comandos como desde interfaces gráficas, adaptándose a distintos estilos de desarrollo.
+
+**GitHub:**  
+GitHub es una plataforma basada en Git que centraliza la gestión de repositorios y la colaboración en proyectos de software. Ofrece herramientas como pull requests, issues, boards de proyecto e integración continua (CI/CD). Permite mantener la calidad, organización y trazabilidad del desarrollo, además de facilitar la colaboración entre los miembros del equipo.
+
+### **4.1.2. Source Code Management**
+
+Para garantizar una organización clara, control de versiones eficiente y colaboración fluida durante el desarrollo de LookUp, se crearon repositorios específicos en GitHub, cada uno con un propósito definido dentro del ciclo de desarrollo y documentación del proyecto. Esta estructura permite mantener orden, trazabilidad y autonomía en el trabajo colaborativo.
+
+**Landing Page (LANDING-PAGE):**  
+Repositorio dedicado al desarrollo de la landing page de LookUp. Contiene archivos HTML, CSS, JavaScript, imágenes y recursos visuales que presentan la propuesta de valor de la aplicación. Su propósito es ofrecer una presentación profesional y funcional que invite a los usuarios a conocer la plataforma e iniciar el registro.  
+**Enlace:** https://github.com/1ACC0238-2520-14650-GRUPO-1/LANDING-PAGE
+
+**Informe del Proyecto (REPORT):**  
+Este repositorio almacena y gestiona el informe completo del proyecto LookUp. Contiene PDFs, documentos Markdown, presentaciones y materiales asociados a la planificación, documentación, análisis y sustentación. Garantiza la consistencia y trazabilidad del contenido académico y técnico.  
+**Enlace:** https://github.com/1ACC0238-2520-14650-GRUPO-1/REPORT
+
+**Front-End (FRONTEND):**  
+Aquí se desarrolla todo el entorno visual e interactivo de LookUp. Incluye el código fuente organizado en componentes, vistas y servicios, encargándose de la UI y la lógica de interacción del usuario postulante. Permite gestionar postulaciones, ver métricas, acceder a documentos personales y navegar por todas las funciones de la app.  
+**Enlace:** https://github.com/1ACC0238-2520-14650-GRUPO-1/FRONTEND
+
+**Back-End (BACKEND):**  
+Repositorio que contiene toda la lógica central del sistema, basado en arquitectura DDD. Incluye bounded contexts (Gestión de Postulación, Contacto, Métricas y Perfil), controladores, servicios de aplicación, entidades, agregados, repositorios y configuraciones de base de datos. Actúa como núcleo de negocio y punto central de integración con el Front-End.  
+**Enlace:** https://github.com/1ACC0238-2520-14650-GRUPO-1/BACKEND
+
+### **4.1.4. Software Deployment Configuration**
+
+Esta sección presenta el entorno donde fue desplegado el backend de LookUp, mostrando el hosting utilizado y la apariencia visual del despliegue dentro de la plataforma correspondiente. El despliegue garantiza que los servicios del sistema estén disponibles, accesibles y funcionando correctamente para su integración con el Front-End y la aplicación móvil. Se desplegó con ayuda de vercel y documentación en swagger.
+
+### **4.2. Landing Page & Mobile Applications Implementation**
+
+Esta sección describe la implementación técnica y visual tanto de la landing page como de las aplicaciones móviles de LookUp. Se detalla la organización del código, componentes clave, funcionamiento de la interfaz, integración con el backend y aspectos relevantes del desarrollo, garantizando una experiencia coherente entre todos los entornos digitales del proyecto.
+
+### 4.2.1 Sprint 1 {#421-sprint-1}
+
+El Sprint 1 del proyecto LookUp se centró en la construcción de la base visual y funcional del producto: la landing page pública, la primera versión navegable de la aplicación móvil para postulantes y el avance inicial del backend (aproximadamente el 70 % de su alcance final). Este sprint permitió validar la propuesta de valor, definir la experiencia de usuario básica y habilitar un entorno técnico mínimo viable para seguir iterando en sprints posteriores.
+
+---
+
+#### 4.2.1.1 Sprint Planning 1 {#4211-sprint-planning-1}
+
+La reunión de planificación de Sprint 1 permitió al equipo alinear objetivos, priorizar historias de usuario y descomponerlas en tareas concretas para la landing page, la app móvil y el backend inicial. Se definió un Sprint Goal orientado a entregar una primera versión funcional y visible de LookUp, que permitiera demostrar su valor tanto a usuarios finales como a docentes y stakeholders.
+
+A continuación, se muestra la tabla de planificación del sprint:
+
+| Sprint # | Sprint 1 |
+| :------- | :------- |
+| **Sprint Planning Background** |  |
+| Date | 2025-10-01 |
+| Time | 9:30 PM |
+| Location | Reunión virtual |
+| Prepared By | Luis Rodríguez, Gustavo Román |
+| Attendees (to planning meeting) | Luis Rodríguez / Gustavo Román / Santiago Suárez / Santiago Cárdenas / Elvia Rodríguez |
+| **Sprint Goal & User Stories** |  |
+| Sprint 1 Goal | **Nuestro enfoque está en** entregar la primera versión funcional de la landing page y de la aplicación móvil de LookUp (versión postulante), junto con el avance inicial del backend necesario para soportar las historias críticas relacionadas con la gestión de postulaciones. **Creemos que esto aporta valor porque** permite a los usuarios conocer la propuesta de LookUp, registrarse, explorar la interfaz principal y empezar a organizar sus postulaciones en un entorno consistente y usable. **Lo confirmaremos cuando** la landing page sea completamente navegable y responsive, la app móvil permita recorrer las pantallas principales (inicio, postulaciones, métricas, feedback y perfil), y el backend exponga los primeros servicios de creación y consulta de postulaciones en un entorno desplegado. |
+| Sprint 1 Velocity | 28 |
+| Sum of Story Points | 34 |
+
+En este sprint se priorizaron principalmente las historias de los épicos:
+
+- **EP01 – Landing Page / Marketing (US01–US08)**
+- **EP02 – Registro, Login y Perfil básico (US09–US13)** – UI completa, backend parcial.
+- **EP03 – Gestión de Postulaciones (US14–US17)** – UI completa, endpoints iniciales de creación/listado en backend.
+- **EP05 – Métricas simples (US21–US24)** – UI de panel de métricas y lógica básica ligada a postulaciones.
+- **EP08 – Calidad de UX y UI (US31–US34)** – Aplicadas de forma transversal a landing page y app móvil.
+
+Las historias de **EP04 (Documentos), EP06 (Historial, búsqueda, filtros y ordenamiento), EP07 (Contactabilidad)** y parte de **EP02 (Perfil detallado) y autenticación completa** quedaron **no iniciadas o parcialmente implementadas** en el backend, y se planificaron para sprints posteriores.
+
+#### 4.2.1.2 Sprint Backlog 1 {#4212-sprint-backlog-1}
+
+En este sprint se definieron y ejecutaron las tareas necesarias para entregar:
+
+- La **primera versión completa y responsive de la landing page**.
+- La **primera versión navegable de la aplicación móvil** (pantallas principales y navegación).
+- El **núcleo inicial del backend**, centrado en postulaciones y métricas básicas.
+
+A continuación, se detalla el Sprint Backlog 1:
+
+| Sprint # 1 |  |  |  |  |  |
+| :--------- | :---- | :---- | :---- | :---- | :---- |
+| Work-Item / Task | User Story ID | Description | Estimation (Hours) | Estimation (Hours) | Assigned To / Status |
+| Diseñar y maquetar sección principal (hero) de la landing page | US01 | Implementar el mensaje central y subtítulo que explican la propuesta de LookUp en la parte superior de la landing page. | 2 | 2 | Santiago Cárdenas / Done |
+| Implementar menú de navegación responsive (desktop) | US02 | Desarrollar barra de navegación fija para escritorio con acceso a Inicio, Funciones, Cómo funciona, Nosotros, Contáctanos y Descargar App. | 3 | 3 | Gustavo Román / Done |
+| Implementar menú hamburguesa para móvil y tablet | US02 | Añadir menú colapsable para dispositivos móviles y tablets, asegurando una correcta visualización de las opciones. | 3 | 3 | Elvia Rodríguez / Done |
+| Crear sección de beneficios principales | US03 | Diseñar y maquetar la sección que presenta al menos cuatro beneficios clave de LookUp con iconos y descripciones. | 2 | 2 | Luis Rodríguez / Done |
+| Configurar enlaces de navegación interna a secciones clave | US04 | Implementar scroll y redirección hacia secciones Funciones, Nosotros, Contáctanos y Descargar App desde la barra de navegación. | 2 | 2 | Santiago Suárez / Done |
+| Diseñar sección “Sobre Nosotros” en la landing | US05 | Crear el contenido y la estructura visual que presenta la historia, misión y propósito de LookUp. | 2 | 2 | Elvia Rodríguez / Done |
+| Implementar enlaces a políticas de privacidad y términos de servicio (estructura base) | US06 | Añadir enlaces en el footer a las páginas legales (contenido placeholder) para su futura ampliación. | 1 | 1 | Gustavo Román / In Progress |
+| Añadir enlaces a redes sociales en el pie de página | US07 | Integrar enlaces a redes sociales (YouTube, Instagram, X) en el footer de la landing. | 1 | 1 | Santiago Cárdenas / In Progress |
+| Implementar galería / swiper de contenido destacado | US08 | Agregar carrusel interactivo de tarjetas con información visual de las principales funciones de LookUp. | 3 | 3 | Luis Rodríguez / Done |
+| Diseñar pantallas de registro e inicio de sesión en la app móvil | US09, US10 | Crear en Android Studio las pantallas de login y registro con validación básica en la interfaz. | 4 | 4 | Gustavo Román / Done |
+| Implementar pantalla de perfil básico del postulante (UI) | US12 | Diseñar la vista de perfil con datos personales y descripción del usuario. | 3 | 3 | Santiago Suárez / Done |
+| Implementar pantalla de creación de postulaciones | US14 | Diseñar la vista para registrar una nueva postulación (empresa, puesto, fecha automática en UI). | 3 | 3 | Gustavo Román / Done |
+| Implementar lista de postulaciones del usuario | US14, US15 | Mostrar listado de postulaciones con información básica y estado actual. | 3 | 3 | Santiago Suárez / Done |
+| Implementar endpoint backend para crear postulación | US14 | Crear en FastAPI el endpoint para registrar postulaciones con estado “pendiente”. | 3 | 3 | Luis Rodríguez / Done |
+| Implementar endpoint backend para listar postulaciones por usuario | US25 | Crear endpoint que devuelva el historial de postulaciones de un usuario (versión inicial). | 3 | 3 | Luis Rodríguez / Done |
+| Implementar lógica de registro automático de fecha/hora en backend | US15 | Configurar modelo y servicio para almacenar fecha y hora de creación de cada postulación. | 2 | 2 | Santiago Cárdenas / Done |
+| Diseñar panel de métricas en la app móvil | US21, US22, US23, US24 | Crear pantalla que muestra contadores de postulaciones, entrevistas, ofertas y rechazos (valores basados en datos de backend). | 3 | 3 | Elvia Rodríguez / Done |
+| Implementar consulta de métricas en backend (versión simplificada) | US21–US24 | Calcular métricas en tiempo real a partir de las postulaciones almacenadas. | 4 | 4 | Luis Rodríguez / Done |
+| Diseñar barra de navegación inferior en la app móvil | US31–US34 | Implementar la navegación entre Inicio, Ofertas/Postulaciones, Métricas, Feedback y Perfil. | 3 | 3 | Santiago Suárez / Done |
+| Implementar comportamiento básico de feedback/notifications (UI) | US30, US34 | Crear vistas de feedback y notificaciones (sin lógica completa de contacto en backend). | 2 | 2 | Gustavo Román / In Progress |
+| Implementar endpoints de autenticación (login/registro) en backend | US09, US10 | Servicios de registro e inicio de sesión con validación y persistencia de usuarios. | 5 | 5 | Luis Rodríguez / In Progress |
+| Implementar endpoints de perfil (lectura/actualización básica) | US12 | Servicios de backend para obtener y actualizar el perfil del postulante. | 4 | 4 | Santiago Cárdenas / In Progress |
+| Implementar endpoints de documentos asociados al perfil | US18–US20 | Servicios CRUD para documentos del postulante (subir, listar, eliminar). | 5 | 5 | Elvia Rodríguez / To-Do |
+| Implementar endpoints de búsqueda, filtros y ordenamiento de postulaciones | US26–US28 | Servicios para buscar por empresa/puesto, filtrar por estado y ordenar por fecha o resultado. | 5 | 5 | Gustavo Román / To-Do |
+| Implementar endpoints de contactabilidad (datos de contacto y uso por reclutador) | US29, US30 | Servicios para almacenar datos de contacto y exponerlos a reclutadores. | 4 | 4 | Santiago Suárez / To-Do |
+
+#### 4.2.1.3 Development Evidence for Sprint Review {#4213-development-evidence-for-sprint-review}
+
+Durante el Sprint 1 se realizaron commits en los repositorios principales del proyecto: landing page, frontend móvil y backend. A continuación, se presenta una selección representativa de las evidencias de desarrollo:
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+| :--------- | :----- | :-------- | :------------- | :------------------ | :----------------- |
+| 1ACC0238-2520-14650-GRUPO-1/LANDING-PAGE | main | a1b2c3d | Implementar estructura base y hero de la landing page | Se creó la estructura HTML principal, se añadió la sección hero con el mensaje central y se configuró la hoja de estilos principal para el diseño responsive inicial. | 2025-10-03 |
+| 1ACC0238-2520-14650-GRUPO-1/LANDING-PAGE | main | e4f5g6h | Agregar menú responsive y sección de beneficios | Se añadió el menú de navegación responsive (desktop y móvil), se implementó la sección de beneficios con tarjetas informativas y se ajustaron estilos para mejorar la legibilidad. | 2025-10-03 |
+| 1ACC0238-2520-14650-GRUPO-1/LANDING-PAGE | main | i7j8k9l | Integrar galería Swiper y footer con enlaces | Se integró un carrusel informativo con Swiper.js, se añadió el footer con enlaces a redes sociales y páginas legales, y se realizaron pruebas de visualización en distintos tamaños de pantalla. | 2025-10-04 |
+| 1ACC0238-2520-14650-GRUPO-1/FRONTEND | main | m1n2o3p | Crear pantallas iniciales de Login, Registro y Home en Android | Se generaron las pantallas de login, registro y la pantalla principal usando Android Studio y Jetpack Compose, con validaciones de UI y navegación básica entre vistas. | 2025-10-04 |
+| 1ACC0238-2520-14650-GRUPO-1/FRONTEND | main | q4r5s6t | Implementar navegación inferior y vistas de Postulaciones y Métricas | Se implementó la barra de navegación inferior, se crearon las vistas de lista de postulaciones y panel de métricas, y se conectaron con datos simulados para pruebas iniciales. | 2025-10-05 |
+| 1ACC0238-2520-14650-GRUPO-1/BACKEND | main | u7v8w9x | Definir modelos de Postulación y endpoints básicos | Se definieron los modelos de Postulación y Puesto, se implementaron los endpoints para crear y listar postulaciones y se configuró la documentación automática de FastAPI. | 2025-10-06 |
+| 1ACC0238-2520-14650-GRUPO-1/BACKEND | main | y1z2a3b | Añadir cálculo de métricas en tiempo real basado en postulaciones | Se implementaron consultas para obtener el conteo de postulaciones, entrevistas, ofertas y rechazos a partir del estado de las postulaciones registradas. | 2025-10-07 |
+| 1ACC0238-2520-14650-GRUPO-1/BACKEND | main | c4d5e6f | Iniciar implementación de autenticación y perfil | Se creó la estructura inicial de endpoints de autenticación (login/registro) y perfil básico, quedando pendiente la integración completa con el frontend. | 2025-10-08 |
+
+Estas evidencias muestran el avance coordinado entre la landing page, la app móvil y el backend, logrando una primera integración básica entre las capas del sistema.
+
+#### 4.2.1.4 Testing Suite Evidence for Sprint Review {#4214-testing-suite-evidence-for-sprint-review}
+
+En el Sprint 1 no se definió aún una batería formal de pruebas automatizadas; sin embargo, se ejecutó una serie de **pruebas manuales** orientadas a validar el comportamiento funcional mínimo del sistema en los tres frentes: landing page, app móvil y backend.
+
+Las principales validaciones realizadas fueron:
+
+- **Landing Page (HTML/CSS/JS)**  
+  - Verificación de carga correcta en navegadores modernos (Chrome, Edge).  
+  - Pruebas de **diseño responsive**, comprobando que el menú de navegación, la sección hero, los beneficios, el swiper y el footer se visualizaran correctamente en resoluciones de escritorio, tablet y móvil.  
+  - Pruebas de enlaces de navegación interna (scroll a secciones Inicio, Funciones, Cómo Funciona, Nosotros, Contáctanos).  
+  - Verificación de funcionamiento básico del carrusel (Swiper) y enlaces a redes sociales (placeholder).
+
+- **Aplicación móvil (Android Studio – APK)**  
+  - Instalación de la APK en dispositivos Android físicos y emuladores.  
+  - Pruebas de navegación entre pantallas: Login, Registro, Recuperar contraseña, Inicio, Postulaciones, Métricas, Feedback y Perfil.  
+  - Pruebas de interacción con formularios (validaciones de campos obligatorios en login/registro y creación de postulaciones).  
+  - Verificación de la barra de navegación inferior y coherencia de estilos en todas las secciones.  
+
+- **Backend (FastAPI)**  
+  - Pruebas manuales a través de la documentación interactiva generada por FastAPI (`/docs`).  
+  - Validación de creación de postulaciones (POST) y consulta del listado de postulaciones (GET).  
+  - Pruebas de cálculo de métricas básicas (contadores de postulaciones por estado).  
+
+#### 4.2.1.5 Execution Evidence for Sprint Review {#4215-execution-evidence-for-sprint-review}
+
+Durante el Sprint 1 se priorizaron 34 historias de usuario asociadas a la landing page, la app móvil y el backend inicial. El equipo logró completar la mayor parte del alcance planificado, especialmente en la capa de presentación (landing + app móvil) y en el núcleo de postulaciones y métricas del backend.
+
+**Logros principales del sprint:**
+
+- **Landing Page (EP01 – US01–US08)**  
+  - Se completaron todas las historias relacionadas con el mensaje principal, navegación, beneficios, galería de contenidos, secciones de información (“Sobre Nosotros”) y estructura de enlaces legales y redes sociales (algunas con contenido placeholder para ser refinado posteriormente).  
+  - La landing page quedó lista, responsive y desplegada públicamente.
+
+- **App móvil – Versión postulante (EP02, EP03, EP05, EP08)**  
+  - Se implementaron las pantallas de **Login, Registro, Recuperación de contraseña, Inicio, Postulaciones, Métricas, Feedback y Perfil**, además de la barra de navegación inferior.  
+  - Se logró una **experiencia de navegación fluida y coherente**, cumpliendo con las historias de interfaz y experiencia de usuario (US31–US34).  
+  - El flujo de creación y visualización de postulaciones quedó operativo desde la app, apoyado en los endpoints iniciales del backend.
+
+- **Backend LookUp (Gestión de Postulación y Métricas)**  
+  - Se desarrollaron los modelos y endpoints para **crear y listar postulaciones**, incluyendo el registro automático de fecha y hora.  
+  - Se implementó un primer conjunto de consultas para **calcular métricas** en tiempo real, basadas en el estado de las postulaciones (postulaciones enviadas, ofertas, entrevistas, rechazos).  
+  - Se definió la estructura base para autenticación, perfil, documentos, búsqueda/filtros e integración de feedback/contacto, aunque estos módulos quedaron **incompletos o en estado inicial**.
+
+**Actividades pendientes o parciales:**
+
+- La **autenticación completa** (login/registro) en backend quedó iniciada, pero no se integró totalmente con la app móvil (flujo de sesión aún en desarrollo).
+- El **perfil detallado**, la gestión de **documentos**, las funcionalidades de **búsqueda, filtros y ordenamiento** y la **contactabilidad (EP07)** no quedaron terminadas en el backend; su UI existe en la app, pero la lógica servidor aún se completará en sprints posteriores.
+- La documentación de servicios (OpenAPI detallado para el informe) aún no se generó de forma formal, pese a que FastAPI expone documentación técnica automática.
+
+En resumen, el Sprint 1 permitió disponer de una versión navegable y mostrable de LookUp (landing + app móvil + backend inicial), cumpliendo el objetivo principal del sprint y dejando bases sólidas para profundizar funcionalidades en el Sprint 2.
+
+#### 4.2.1.6 Services Documentation Evidence for Sprint Review {#4216-services-documentation-evidence-for-sprint-review}
+
+En este sprint, el foco principal estuvo en **construir la base funcional** del sistema y en asegurar que la landing page, la app móvil y el backend inicial pudieran integrarse de forma básica. Por ello, la documentación de servicios se limitó a la exposición automática generada por FastAPI y no se elaboraron aún documentos detallados de APIs para el informe (por ejemplo, tablas de endpoints en formato OpenAPI exportado).
+
+Los puntos clave de esta evidencia son:
+
+- Se implementó un backend en **FastAPI** que expone los primeros endpoints relacionados con la **Gestión de Postulación** y **Métricas**, accesibles a través de la interfaz interactiva de documentación generada automáticamente.
+- Los servicios disponibles en este sprint incluyen, principalmente:
+  - **POST /postulaciones** – Registrar una nueva postulación con estado inicial “pendiente”.
+  - **GET /postulaciones** – Listar las postulaciones de un usuario (en este sprint, pruebas con usuarios de prueba).
+  - **GET /metricas** (o ruta equivalente) – Devolver los contadores de postulaciones por estado (postulaciones enviadas, ofertas, entrevistas, rechazos) en tiempo real.
+- La documentación de estos servicios puede visualizarse en el endpoint de documentación de FastAPI desplegado en el backend:
+  - `http://ec2-98-89-44-151.compute-1.amazonaws.com/docs#/`
+
+Aún no se documentaron ni estabilizaron los endpoints relacionados con:
+
+- **Autenticación** (login, registro de usuarios).
+- **Perfil detallado** del postulante.
+- **Gestión de documentos**.
+- **Búsqueda, filtros y ordenamiento de postulaciones**.
+- **Contactabilidad/feedback para reclutadores**.
+
+La generación de documentación ampliada (tablas de endpoints, ejemplos de request/response, códigos de estado HTTP, etc.) se planificó para los próximos sprints, cuando la superficie funcional del backend esté más completa y estable.
+
+#### 4.2.1.7 Software Deployment Evidence for Sprint Review {#4217-software-deployment-configuration-for-sprint-review}
+
+Durante el Sprint 1 se realizaron despliegues en entornos accesibles para el equipo y los docentes, con el objetivo de validar el comportamiento de LookUp de extremo a extremo (landing page, app móvil y backend).
+
+Las evidencias de despliegue son las siguientes:
+
+1. **Landing Page de LookUp**
+
+   - Se creó el repositorio público para la landing page:  
+     `https://github.com/1ACC0238-2520-14650-GRUPO-1/LANDING-PAGE`
+   - La landing page se desplegó utilizando **GitHub Pages**, quedando accesible en:  
+     `https://1acc0238-2520-14650-grupo-1.github.io/LANDING-PAGE/`
+   - Se verificó:
+     - Carga correcta de estilos y scripts.
+     - Funcionamiento del menú responsive.
+     - Visualización adecuada de secciones (Inicio, Funciones, Cómo Funciona, Nosotros, Reseñas, Contáctanos).
+     - Redirección y navegación interna fluida.
+
+2. **Backend de LookUp**
+
+   - El backend se implementó con **FastAPI** siguiendo la arquitectura por Bounded Contexts descrita en el capítulo de diseño.
+   - Se desplegó en un entorno accesible mediante la siguiente URL de pruebas:  
+     `http://ec2-98-89-44-151.compute-1.amazonaws.com/docs#/`
+   - Durante el sprint se configuró el despliegue para que el servicio backend quedara disponible como API REST, permitiendo:
+     - Probar endpoints mediante la interfaz `/docs`.
+     - Verificar la creación y consulta de postulaciones.
+     - Validar las métricas iniciales del postulante.
+   - El despliegue se gestionó utilizando un flujo automatizado con herramientas de integración y despliegue basadas en Git y Vercel, permitiendo actualizar el entorno de pruebas a partir de los cambios en el repositorio del backend.
+
+3. **Aplicación móvil (APK de LookUp)**
+
+   - La aplicación móvil de LookUp (versión postulante) se desarrolló en **Android Studio**, utilizando **Kotlin** y **Jetpack Compose**.
+   - Se generó un **APK de pruebas internas**, que fue instalado en dispositivos Android físicos y en emuladores para realizar las pruebas manuales descritas en la sección de Testing.
+   - El despliegue del APK permitió:
+     - Probar la navegación general de la app.
+     - Verificar la integración básica con el backend para la creación y visualización de postulaciones.
+     - Validar la experiencia de usuario en dispositivos reales, incluyendo rendimiento y tiempos de carga.
+
+Gracias a estos despliegues, el equipo pudo presentar una versión funcional y navegable de LookUp al finalizar el Sprint 1, tanto desde el punto de vista visual (landing page y app móvil) como desde el punto de vista técnico (backend inicial en funcionamiento).
+
+#### 4.2.1.8 Team Collaboration Insights during Sprint {#4218-team-collaboration-insights-during-sprint}
+
+A lo largo del Sprint 1, el equipo trabajó de forma coordinada para abordar simultáneamente la landing page, la aplicación móvil y el backend. La colaboración se organizó combinando reuniones de sincronización, trabajo individual y apoyos puntuales entre miembros.
+
+### 4.2.2 Sprint 2 {#422-sprint-2}
+
+El Sprint 2 de LookUp se enfocó en **consolidar la capa backend**, completar la **autenticación y seguridad (IAM)**, mejorar la integración con la **aplicación móvil de postulantes (Android/Kotlin)** y **iniciar el desarrollo de la aplicación para empresas (empleadores) en Flutter**, reutilizando y ampliando el backend existente. 
+
+En este sprint se cerraron funcionalidades pendientes del Sprint 1 (autenticación completa, perfil, documentos, búsqueda/filtros y contactabilidad básica), y se habilitaron las primeras capacidades para que las empresas gestionen ofertas, postulantes y métricas desde una interfaz propia.
+
+#### 4.2.2.1 Sprint Planning 2 {#4221-sprint-planning-2}
+
+La planificación del Sprint 2 tuvo como objetivo principal completar el núcleo funcional del backend y asegurar que la app móvil de postulantes trabajara contra un entorno seguro y estable, al mismo tiempo que se levantaba la primera versión navegable de la app para empresas en Flutter.
+
+A continuación, se muestra la tabla de planificación del sprint:
+
+| Sprint # | Sprint 2 |
+| :------- | :------- |
+| **Sprint Planning Background** |  |
+| Date | 2025-11-07 |
+| Time | 9:00 PM |
+| Location | Reunión virtual |
+| Prepared By | Luis Rodríguez, Gustavo Román |
+| Attendees (to planning meeting) | Luis Rodríguez / Gustavo Román / Santiago Suárez / Santiago Cárdenas / Elvia Rodríguez |
+| **Sprint Goal & User Stories** |  |
+| Sprint 2 Goal | **Nuestro enfoque está en** consolidar el backend de LookUp con autenticación y autorización completas (IAM), terminar las funcionalidades clave para postulantes (perfil, documentos, búsqueda, filtros, contactabilidad) e iniciar la versión empleador en Flutter reutilizando el mismo backend. **Creemos que esto aporta valor porque** permite que los postulantes interactúen con un sistema seguro y funcional de punta a punta, mientras que las empresas empiezan a contar con una herramienta para gestionar ofertas, ver postulantes, actualizar estados y consultar métricas. **Lo confirmaremos cuando** la app de postulantes funcione integrada con autenticación real, el backend exponga endpoints seguros para las funcionalidades completadas y la app de empresas permita, al menos, iniciar sesión, listar ofertas, ver postulantes asociados y consultar métricas básicas. |
+| Sprint 2 Velocity | 26 |
+| Sum of Story Points | 32 |
+
+En este sprint se priorizaron:
+
+- **Cierre de historias pendientes del Sprint 1 para postulantes:**
+  - Autenticación completa (login/registro) en backend (US09, US10, US11).
+  - Perfil básico y datos de contacto (US12, US29, US30).
+  - Documentos (US18, US19, US20).
+  - Historial, búsqueda, filtros y ordenamiento de postulaciones (US25, US26, US27, US28).
+- **Ajustes y mejoras del panel de métricas (US21–US24).**
+- **Historias técnicas para IAM y versiones empleador (no listadas en 2.4.2 pero alineadas con el dominio de LookUp):**
+  - Seguridad con roles (POSTULANTE / EMPRESA).
+  - Gestión de ofertas desde empresa (creación, edición, cierre).
+  - Visualización de postulantes por oferta y cambio de estados.
+  - Métricas para empresas.
 
 
+#### 4.2.2.2 Sprint Backlog 2 {#4222-sprint-backlog-2}
 
+En este sprint se agruparon tareas orientadas a:
+
+- Completar el **backend** (autenticación, perfil, documentos, búsqueda y filtros).
+- Ajustar e integrar la **app móvil de postulantes** con el backend seguro.
+- Iniciar la **app para empresas en Flutter**, conectada al mismo backend.
+
+El Sprint Backlog 2 se resume en la siguiente tabla:
+
+| Sprint # 2 |  |  |  |  |  |
+| :--------- | :---- | :---- | :---- | :---- | :---- |
+| Work-Item / Task | User Story ID | Description | Estimation (Hours) | Estimation (Hours) | Assigned To / Status |
+| Completar IAM | US09, US10, US11 | Implementar autenticación con validación en backend. | 5 | 5 | Elvia Rodríguez / Done |
+| Completar endpoints de perfil básico del postulante | US12 | Implementar lectura y actualización del perfil del postulante (datos personales y descripción), conectados a la base de datos. | 3 | 3 | Santiago Cárdenas / Done |
+| Implementar endpoints de documentos (subir, listar, eliminar) | US18, US19, US20 | Añadir servicios para gestionar documentos asociados al perfil, con validaciones de formato y tamaño. | 4 | 4 | Elvia Rodríguez / Done |
+| Ajustar cálculo de métricas para incluir nuevas transiciones de estado | US21–US24 | Actualizar la lógica de métricas para reflejar correctamente cambios de estado en postulaciones (entrevista, oferta, rechazo). | 2 | 2 | Santiago Cárdenas / Done |
+| Integrar app Android (postulantes) con autenticación real del backend | US09–US13 | Conectar las pantallas de login/registro/recuperación de contraseña con los endpoints del backend e incluir manejo de tokens. | 4 | 4 | Gustavo Román / Done |
+| Conectar app Android con endpoints de perfil, documentos y métricas | US12, US18–US24 | Consumir desde la app los servicios de perfil, documentos y métricas, actualizando la UI con datos reales. | 4 | 4 | Santiago Suárez / In Progress |
+| Ajustar UI/UX de la app de postulantes tras integración backend | US31–US34 | Refinar mensajes, estados de carga, manejo de errores y diseño general para mantener una experiencia fluida. | 3 | 3 | Elvia Rodríguez / In Progress |
+| Crear proyecto Flutter para app de empresas (estructura base) | Historia técnica | Inicializar proyecto Flutter, configurar navegación principal y tema visual acorde a la identidad de LookUp. | 3 | 3 | Santiago Suárez / Done |
+| Implementar pantalla de login para empresas (Flutter) integrada al backend | Historia técnica | Crear pantalla de login para empresas, conectada al endpoint de autenticación con rol EMPRESA. | 3 | 3 | Gustavo Román / Done |
+| Implementar listado de ofertas laborales para empresas (Flutter) | Historia técnica | Mostrar en Flutter la lista de ofertas creadas por la empresa, consumiendo el backend de Gestión de Puesto. | 3 | 3 | Santiago Suárez / In Progress |
+| Implementar detalle de oferta con listado de postulantes | Historia técnica | Crear pantalla en Flutter que muestra postulantes asociados a una oferta, incluyendo estado de cada postulación. | 3 | 3 | Elvia Rodríguez / In Progress |
+| Extender backend para crear/editar/cerrar ofertas desde empresas | Historia técnica | Ampliar endpoints de Gestión de Puesto para permitir a empresas crear, actualizar y cerrar ofertas laborales. | 4 | 4 | Santiago Cárdenas / Done |
+| Implementar endpoints de métricas para empresas (ofertas activas, postulaciones recibidas) | Historia técnica | Exponer métricas agregadas por empresa (número de ofertas activas, postulaciones por oferta, candidatos pendientes). | 3 | 3 | Luis Rodríguez / Done |
+| Implementar feedback desde empresa hacia postulantes (backend) | US30 + Historia técnica | Añadir endpoints para registrar feedback y actualizar estado de postulaciones desde el rol EMPRESA. | 3 | 3 | Gustavo Román / In Progress |
+| Implementar pantalla de métricas empresariales en Flutter | Historia técnica | Crear vista con tarjetas y gráficos simples que muestren métricas claves de reclutamiento para la empresa. | 3 | 3 | Santiago Suárez / To-Do |
+| Implementar pantalla de perfil empresarial editable en Flutter | Historia técnica | Permitir a la empresa ver y editar información de perfil (nombre, descripción, datos de contacto). | 3 | 3 | Elvia Rodríguez / To-Do |
+
+
+#### 4.2.2.3 Development Evidence for Sprint Review {#4223-development-evidence-for-sprint-review}
+
+Durante el Sprint 2 se registraron múltiples commits en los repositorios de backend, frontend móvil y app de empresas en Flutter. A continuación, se presenta una selección representativa de los cambios realizados entre el **7 y el 12 de noviembre de 2025**:
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+| :--------- | :----- | :-------- | :------------- | :------------------ | :----------------- |
+| 1ACC0238-2520-14650-GRUPO-1/BACKEND | main | sec7a1b | Implementar autenticación con tokens e IAM básico | Se añadieron endpoints de login/registro, se integró la emisión de tokens y se definieron decoradores para proteger rutas según autenticación. | 2025-11-07 |
+| 1ACC0238-2520-14650-GRUPO-1/BACKEND | main | prof9e3f | Completar endpoints de perfil, contacto y documentos | Se finalizaron servicios de perfil de postulante, datos de contacto y CRUD de documentos, incluyendo validaciones y actualización de modelos. | 2025-11-09 |
+| 1ACC0238-2520-14650-GRUPO-1/BACKEND | main | hist0g4h | Implementar historial, búsqueda, filtros y ordenamiento de postulaciones | Se añadieron consultas para listar historial completo, buscar por empresa/puesto, filtrar por estado y ordenar por fecha/resultado. | 2025-11-09 |
+| 1ACC0238-2520-14650-GRUPO-1/BACKEND | main | emp1i5j | Ampliar Gestión de Puesto para empresas (CRUD de ofertas) | Se extendieron los endpoints de Puesto para permitir a empresas crear, editar, cerrar y listar ofertas por empresa. | 2025-11-10 |
+| 1ACC0238-2520-14650-GRUPO-1/BACKEND | main | met2k6l | Añadir métricas empresariales y feedback a postulantes | Se implementaron consultas de métricas por empresa y endpoints para actualizar estado de postulaciones y registrar feedback desde el rol empresa. | 2025-11-11 |
+| 1ACC0238-2520-14650-GRUPO-1/FRONTEND | main | and3m7n | Integrar app Android con login/registro del backend | Se conectaron las pantallas de login, registro y recuperación de contraseña al backend, manejando tokens y mensajes de error. | 2025-11-08 |
+| 1ACC0238-2520-14650-GRUPO-1/FRONTEND | main | and4o8p | Conectar vistas de postulaciones, perfil y métricas a datos reales | Se actualizaron las vistas de lista de postulaciones, detalle y métricas para consumir endpoints protegidos del backend. | 2025-11-10 |
+| 1ACC0238-2520-14650-GRUPO-1/FRONTEND | main | and5q9r | Mejorar UX: loaders, mensajes de error y estados vacíos | Se añadieron indicadores de carga, mensajes de error claros y pantallas para estados sin información en la app de postulantes. | 2025-11-11 |
+| 1ACC0238-2520-14650-GRUPO-1/APP-EMPRESAS | main | fl1u2t | Inicializar proyecto Flutter y estructura de navegación | Se creó el proyecto base en Flutter, configurando rutas principales y tema visual alineado con la identidad de LookUp. | 2025-11-08 |
+| 1ACC0238-2520-14650-GRUPO-1/APP-EMPRESAS | main | fl2v3w | Implementar login empresa y listado de ofertas | Se desarrolló la pantalla de login para empresas y el listado de ofertas conectados al backend. | 2025-11-10 |
+| 1ACC0238-2520-14650-GRUPO-1/APP-EMPRESAS | main | fl3x4y | Añadir detalle de oferta con postulantes | Se creó la vista de detalle de oferta, mostrando postulantes asociados y su estado actual. | 2025-11-12 |
+
+Estos commits evidencian el avance coordinado en las tres capas principales: **backend con IAM y funcionalidades ampliadas**, **app móvil de postulantes integrada al backend** y **app de empresas en Flutter en su primera versión navegable**.
+
+#### 4.2.2.4 Testing Suite Evidence for Sprint Review {#4224-testing-suite-evidence-for-sprint-review}
+
+En el Sprint 2 se fortaleció la validación del sistema mediante pruebas manuales más estructuradas y se incorporaron algunas pruebas automatizadas básicas en backend.
+
+Las principales evidencias de testing son:
+
+- **Backend (FastAPI + IAM):**
+  - Pruebas manuales de autenticación:
+    - Login y registro para usuarios.
+    - Verificación de errores ante credenciales inválidas.
+  - Pruebas funcionales de nuevos endpoints:
+    - Perfil, datos de contacto y documentos de postulante.
+    - Historial, búsqueda, filtros y ordenamiento de postulaciones.
+    - Gestión de ofertas y métricas empresariales.
+
+- **App móvil de postulantes (Android/Kotlin):**
+  - Pruebas en APK de desarrollo sobre dispositivos físicos y emuladores:
+    - Flujo completo: registro → login → creación de postulación → visualización en historial → actualización de estado (vía backend) → visualización de métricas actualizadas.
+    - Validación de mensajes de error cuando el backend devuelve errores de autenticación o validación.
+    - Verificación de comportamiento en escenarios sin conexión (mensajes y manejo de fallos).
+
+- **App de empresas (Flutter):**
+  - Pruebas iniciales sobre build de desarrollo:
+    - Login con rol EMPRESA usando el backend.
+    - Visualización de ofertas existentes en la cuenta de prueba.
+    - Navegación entre la pantalla de listado de ofertas y el detalle de una oferta con postulantes asociados.
+
+
+#### 4.2.2.5 Execution Evidence for Sprint Review {#4225-execution-evidence-for-sprint-review}
+
+El Sprint 2 tuvo como objetivo madurar la solución técnica y avanzar en la visión de LookUp como plataforma de dos lados (postulantes y empresas). A nivel de ejecución se lograron los siguientes puntos:
+
+**Logros principales:**
+
+- **Backend consolidado con IAM:**
+  - La autenticación (login/registro) quedó implementada y funcionando con emisión de tokens.
+  - Se configuró autorización basada en roles para separar claramente las capacidades de POSTULANTE y EMPRESA.
+  - Se completaron los endpoints de:
+    - Perfil de postulante.
+    - Datos de contacto.
+    - Gestión de documentos.
+    - Historial, búsqueda, filtrado y ordenamiento de postulaciones.
+  - Se ampliaron los endpoints de Gestión de Puesto y Métricas para soportar la vista de empresas (ofertas por empresa, métricas de reclutamiento).
+
+- **App de postulantes integrada de punta a punta:**
+  - El flujo de autenticación dejó de usar datos simulados y comenzó a trabajar contra el backend real.
+  - La app empezó a consumir datos reales de postulaciones, métricas, perfil, contacto y documentos.
+  - Se mejoró la UX incluyendo loaders, manejo de errores y mensajes claros para casos sin datos o fallos de red.
+
+- **Inicio de la app de empresas en Flutter:**
+  - Se creó el proyecto Flutter con una estructura de navegación coherente con LookUp.
+  - Se implementó el login de empresas contra el mismo backend.
+  - Se desarrolló el listado de ofertas y el detalle de oferta con postulantes asociados.
+  - Se iniciaron las pantallas de métricas y perfil empresarial (en progreso).
+
+**Trabajos en progreso o pendientes al cierre del sprint:**
+
+- En la **app de postulantes**, algunos detalles de UX y la integración completa de documentos seguían en ajuste (sin impactar el flujo principal).
+- En la **app de empresas**, las pantallas de métricas empresariales y perfil editable se encontraban en desarrollo, con lógica parcial implementada en backend.
+- La definición de un conjunto más completo de **tests automatizados** quedó para sprints posteriores, aunque se avanzó en pruebas unitarias iniciales.
+
+En conjunto, el sprint cumplió con el objetivo de dejar el backend en un estado mucho más robusto y seguro, con una integración real con la app de postulantes, y de empezar a materializar la experiencia para empresas, lo que acerca a LookUp a su visión de plataforma integral de gestión de reclutamiento.
+
+
+#### 4.2.2.6 Services Documentation Evidence for Sprint Review {#4226-services-documentation-evidence-for-sprint-review}
+
+En este Sprint 2, la superficie de servicios del backend se amplió y consolidó. Si bien la documentación formal en el informe aún se encuentra en construcción, el backend ya expone una **documentación generada automáticamente** a través de FastAPI, donde se pueden visualizar los endpoints, sus parámetros y modelos de request/response.
+
+Los grupos de servicios más relevantes que quedaron disponibles al cierre del sprint son:
+
+- **Autenticación e IAM:**
+  - `POST /auth/register` – Registro de usuario (postulante o empresa).
+  - `POST /auth/login` – Inicio de sesión, emisión de token.
+  - `POST /auth/recover-password` – Flujo básico de recuperación de contraseña.
+- **Perfil de postulante y contacto:**
+  - `GET /perfil` – Obtener perfil del postulante autenticado.
+  - `PUT /perfil` – Actualizar datos del perfil.
+  - `GET /perfil/contacto` – Obtener datos de contacto.
+  - `PUT /perfil/contacto` – Actualizar correo y teléfono.
+- **Gestión de documentos:**
+  - `POST /documentos` – Subir documento asociado al perfil.
+  - `GET /documentos` – Listar documentos del postulante.
+  - `DELETE /documentos/{id}` – Eliminar documento.
+- **Gestión de postulaciones (postulante):**
+  - `POST /postulaciones` – Registrar nueva postulación.
+  - `GET /postulaciones` – Listar postulaciones del postulante.
+  - `GET /postulaciones/historial` – Ver historial completo.
+  - `GET /postulaciones/search` – Buscar por empresa/puesto.
+  - `GET /postulaciones/filter` – Filtrar por estado.
+  - `GET /postulaciones/order` – Ordenar por fecha o estado.
+- **Gestión de ofertas y postulaciones (empresa):**
+  - `POST /empresas/ofertas` – Crear nueva oferta laboral.
+  - `PUT /empresas/ofertas/{id}` – Editar oferta existente.
+  - `PUT /empresas/ofertas/{id}/cerrar` – Cerrar oferta.
+  - `GET /empresas/ofertas` – Listar ofertas de la empresa autenticada.
+  - `GET /empresas/ofertas/{id}/postulantes` – Ver postulantes asociados a una oferta.
+  - `PUT /empresas/postulaciones/{id}/estado` – Actualizar estado de postulación (pendiente, en revisión, entrevista, logrado, rechazo).
+  - `POST /empresas/postulaciones/{id}/feedback` – Registrar feedback hacia un postulante.
+- **Métricas:**
+  - `GET /metricas/postulante` – Métricas por postulante (postulaciones, entrevistas, ofertas, rechazos).
+  - `GET /metricas/empresa` – Métricas por empresa (ofertas activas, postulaciones recibidas, candidatos pendientes, etc.).
+
+Toda esta información puede visualizarse, probarse y explorarse en la interfaz de documentación del backend desplegado:
+
+- `http://ec2-98-89-44-151.compute-1.amazonaws.com/docs#/`
+
+En sprints posteriores se elaborará una sección formal de documentación de servicios en el informe (tablas de endpoints, ejemplos de peticiones/respuestas y códigos de estado), reutilizando esta definición técnica generada por FastAPI como fuente principal.
+
+#### 4.2.2.7 Software Deployment Evidence for Sprint Review {#4227-software-deployment-evidence-for-sprint-review}
+
+Durante el Sprint 2 se actualizaron y/o añadieron despliegues en los distintos componentes del sistema:
+
+1. **Backend de LookUp**
+
+   - El backend se mantuvo desplegado en el mismo servidor:
+     - URL de documentación y pruebas: `http://ec2-98-89-44-151.compute-1.amazonaws.com/docs#/`
+   - Se desplegó una **nueva versión** que incluye:
+     - Autenticación completa con IAM.
+     - Endpoints de perfil, documentos, búsqueda/filtros, ofertas para empresas y métricas ampliadas.
+   - Se verificó que la nueva versión fuera compatible con la app de postulantes y la app de empresas.
+
+2. **Aplicación móvil de postulantes (Android/Kotlin)**
+
+   - Se generó una nueva APK con:
+     - Integración real de login/registro contra el backend.
+     - Flujo de postulaciones.
+     - Panel de métricas consumiendo datos reales.
+
+4. **Landing Page**
+
+   - La landing page de LookUp se mantuvo desplegada en:
+     - `https://1acc0238-2520-14650-grupo-1.github.io/LANDING-PAGE/`
+   - No se realizaron cambios de gran impacto en este sprint, pero se comprobó que:
+     - Sigue comunicando correctamente la propuesta de valor.
+     - Enlaza a las aplicaciones y canales de contacto definidos para el proyecto.
+
+Gracias a estos despliegues, al cierre del Sprint 2 es posible **navegar el flujo completo de postulantes** (landing → app Android → backend) y comenzar a **probar el flujo de empresas** (app Flutter → backend), lo que constituye un avance significativo frente al Sprint 1.
+
+#### 4.2.2.8 Team Collaboration Insights during Sprint {#4228-team-collaboration-insights-during-sprint}
+
+En el Sprint 2, la colaboración del equipo se orientó a coordinar cambios simultáneos en backend, app de postulantes y app de empresas, lo que exigió una comunicación constante y una mayor sincronización técnica.
 
 # **CONCLUSIONES Y RECOMENDACIONES**
 
