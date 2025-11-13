@@ -1502,28 +1502,22 @@ Retorna los puestos filtrados por empresa o estado, o todos si no se pasa filtro
 #### **2.6.1.5. Bounded Context Software Architecture Component Level Diagrams** 
 
 <p align="center">
-  <img src="Images/47.jpg" alt="imagen" />
+  <img src="Images/componentesBC1.png" alt="imagen" />
 </p>
-
-El diagrama se organiza así porque sigue los principios de arquitectura limpia: los controllers reciben las solicitudes externas, los handlers orquestan los casos de uso, los repositories definen contratos de persistencia en el dominio y sus implementaciones en infraestructura se conectan con MySQL. De esta forma, el dominio queda independiente de la tecnología, con responsabilidades claras y flexibilidad para cambiar bases de datos o interfaces sin afectar la lógica de negocio.
 
 #### **2.6.1.6. Bounded Context Software Architecture Code Level Diagrams**
 
 ##### **2.6.1.6.1. Bounded Context Domain Layer Class Diagrams** 
 
 <p align="center">
-  <img src="Images/48.jpg" alt="imagen" />
+  <img src="Images/clasesBC1.png" alt="imagen" />
 </p>
-
-El diagrama de clases representa los principales elementos del dominio de postulación. Se definen las entidades como Postulación y PuestoPostulación, los value objects como EstadoPostulación y Línea de Tiempo, y el aggregate PostulaciónAggregate que garantiza la consistencia entre estado e hitos. Además, el repository abstrae las operaciones de persistencia. Con esta estructura se asegura un modelado centrado en el negocio, con objetos de valor que refuerzan inmutabilidad y entidades que mantienen identidad propia.
 
 ##### **2.6.1.6.2. Bounded Context Database Design Diagram** 
 
 <p align="center">
-  <img src="Images/49.jpg" alt="imagen" />
+  <img src="Images/bdBC1.png" alt="imagen" />
 </p>
-
-El diagrama de base de datos transforma los conceptos del dominio en tablas relacionales. La entidad Postulación guarda la información central de cada solicitud, asociada a PuestoPostulación y al candidato. Los estados de postulación se representan como un valor controlado, mientras que la línea de tiempo registra los hitos de la evolución de cada postulación. Este diseño garantiza integridad referencial y permite consultas eficientes para obtener postulaciones por candidato, puesto o estado.
 
 ### **2.6.2. Bounded Context: Gestión de Contacto de Postulación** 
 
@@ -1662,28 +1656,23 @@ Procesa el envío de feedback, actualiza el agregado, registra el mensaje y pers
 #### **2.6.2.5. Bounded Context Software Architecture Component Level Diagrams**
 
 <p align="center">
-  <img src="Images/50.jpg" alt="imagen" />
+  <img src="Images/componentesBC2.png" alt="imagen" />
 </p>
-
-El diagrama de componentes de Gestión de Contacto de Postulación muestra cómo se organiza la arquitectura en capas siguiendo DDD: la Interface Layer expone endpoints REST mediante el ContactoController, la Application Layer orquesta la lógica con los command handlers EnviarFeedbackCommandHandler y ActualizarEstadoContactoHandler, la Domain Layer concentra las reglas de negocio a través de la entidad ContactoPostulación, el value object Feedback y el agregado ContactoAggregate, y la Infrastructure Layer implementa la persistencia con ContactoRepository conectado a MySQL. De esta manera, se asegura una separación clara de responsabilidades entre la interacción del usuario, la coordinación de procesos, la lógica del dominio y el almacenamiento de datos.
 
 #### **2.6.2.6. Bounded Context Software Architecture Code Level Diagrams**
 
 ##### **2.6.2.6.1. Bounded Context Domain Layer Class Diagrams**
 
 <p align="center">
-  <img src="Images/51.jpg" alt="imagen" />
+  <img src="Images/clasesBC2.png" alt="imagen" />
 </p>
-
-El diagrama de clases del Domain Layer de Gestión de Contacto de Postulación modela los principales elementos de negocio que intervienen en la comunicación entre empresa y postulante. La entidad ContactoPostulacion representa la interacción específica dentro de una postulación, mientras que el value object Feedback encapsula de manera inmutable el mensaje enviado por la empresa (ya sea de aceptación, rechazo o informativo). El agregado ContactoAggregate actúa como punto de entrada para garantizar la consistencia en el procesamiento de feedback y la actualización del estado de la postulación. Finalmente, la interfaz ContactoRepository define las operaciones necesarias para persistir y recuperar contactos asociados a postulaciones, desacoplando la lógica de dominio de la infraestructura de almacenamiento.
 
 ##### **2.6.2.6.2. Bounded Context Database Design Diagram**
 
 <p align="center">
-  <img src="Images/52.jpg" alt="imagen" />
+  <img src="Images/bdBC2.png" alt="imagen" />
 </p>
 
-El diagrama de diseño de base de datos del Bounded Context: Gestión de Contacto de Postulación define dos tablas principales: ContactoPostulacion, que almacena los datos de cada interacción entre empresa y postulante (incluyendo identificadores, fecha y tipo de mensaje), y Feedback, que guarda los mensajes enviados con su tipo, motivo de rechazo y contenido textual. La relación entre ambas es de uno a muchos, ya que un contacto puede generar múltiples feedbacks asociados. Este diseño permite mantener un historial claro y estructurado de las comunicaciones, asegurando integridad referencial mediante la clave foránea contacto\_id.
 
 ### **2.6.3. Bounded Context: Gestión de Métricas** 
 
@@ -1901,32 +1890,22 @@ Todas las operaciones se realizan en modo de solo lectura sobre el estado actual
 #### **2.6.3.5. Bounded Context Software Architecture Component Level Diagrams**
 
 <p align="center">
-  <img src="Images/53.jpg" alt="imagen" />
+  <img src="Images/componentesBC3.png" alt="imagen" />
 </p>
-
-Este diagrama C4 a nivel de componentes muestra cómo funciona el Bounded Context de Gestión de Métricas dentro de la plataforma. El Postulante interactúa a través del MetricaController, que expone endpoints REST para consultar sus indicadores, logros o solicitar un recálculo. Estas solicitudes son atendidas por diferentes Application Services como RecalcularMetricasHandler, ConsultarResumenMetricasHandler y ListarLogrosHandler, que orquestan la lógica del dominio. A su vez, el contexto consume eventos externos de Gestión de Postulación mediante Event Handlers (OnPostulacionCreadaHandler, OnEstadoPostulacionActualizadoHandler y OnPostulacionEliminadaHandler) para actualizar los contadores y logros. Toda la lógica de negocio se concentra en el MetricaAggregate, que coordina la entidad MetricaRegistro y el value object Logro. Finalmente, el agregado se persiste a través de la interfaz MetricaRepository, implementada por MetricaRepositoryImpl, que se comunica con una base de datos MySQL donde se almacenan las métricas y logros de cada postulante.
 
 #### **2.6.3.6. Bounded Context Software Architecture Code Level Diagrams**
 
 ##### **2.6.3.6.1. Bounded Context Domain Layer Class Diagrams**
 
 <p align="center">
-  <img src="Images/54.jpg" alt="imagen" />
+  <img src="Images/clasesBC3.png" alt="imagen" />
 </p>
-
-Este diagrama UML de clases representa el Domain Layer del Bounded Context de Gestión de Métricas. En el centro se encuentra el MetricaAggregate, que actúa como Aggregate Root y garantiza la consistencia del dominio, al orquestar tanto la entidad principal como los logros alcanzados. El agregado se compone de una MetricaRegistro (Entity), que almacena los contadores clave de un postulante (total de postulaciones, entrevistas, ofertas exitosas, rechazos y la tasa de éxito), e incluye métodos para incrementar cada métrica y recalcular la tasa. Además, el agregado puede contener múltiples instancias del Logro (Value Object), que encapsula hitos de gamificación alcanzados al cumplir determinados umbrales (por ejemplo, cierto número de postulaciones o entrevistas). Los logros no tienen identidad propia fuera de este agregado y solo se validan en función de los totales. Finalmente, la interfaz MetricaRepository (Repository) define las operaciones de persistencia necesarias para guardar y recuperar métricas, manteniendo al dominio desacoplado de la infraestructura. En conjunto, este diseño asegura que las métricas de cada postulante se actualicen de forma coherente, que los logros se evalúen automáticamente y que los datos puedan persistirse sin afectar la lógica central del negocio.
 
 ##### **2.6.3.6.2. Bounded Context Database Design Diagram**
 
 <p align="center">
-  <img src="Images/55.jpg" alt="imagen" />
+  <img src="Images/bdBC3.png" alt="imagen" />
 </p>
-
-Este diagrama muestra el diseño de la base de datos para el Bounded Context de Gestión de Métricas. La tabla central es metrica\_registro, que guarda los indicadores acumulados de cada postulante: número total de postulaciones, entrevistas, éxitos logrados (ofertas), rechazos y la tasa de éxito expresada en porcentaje. Esta tabla utiliza como clave primaria el campo perfil\_id, que es además una clave foránea que referencia al identificador de usuario proveniente del Bounded Context de Gestión de Perfil, garantizando la coherencia entre el perfil y sus métricas.
-
-La tabla logro almacena los hitos de gamificación alcanzados por cada postulante. Contiene como clave primaria el logro\_id, además de una clave foránea a metrica\_registro mediante el campo perfil\_id, lo que permite asociar múltiples logros a un mismo perfil. Sus atributos incluyen el nombre del logro, el umbral que lo define y la fecha de obtención. Se aplican restricciones de unicidad para asegurar que un mismo perfil no duplique logros con el mismo nombre, y se establece que los valores de umbral siempre sean mayores o iguales a cero.
-
-Finalmente, la tabla perfil, gestionada externamente por el Bounded Context de Perfil, actúa como referencia externa para enlazar métricas con usuarios registrados en el sistema. Este diseño asegura la integridad referencial y permite que las métricas y logros se consulten y actualicen de manera consistente con la información del postulante.
 
 ### **2.6.4. Bounded Context: Gestión de Perfil** 
 
@@ -2203,28 +2182,27 @@ Este modelo se apoya en:
 #### **2.6.4.5. Bounded Context Software Architecture Component Level Diagrams**
 
 <p align="center">
-  <img src="Images/56.jpg" alt="imagen" />
+  <img src="Images/componentesBC4.png" alt="imagen" />
 </p>
-
-Este diagrama C4 a nivel de componentes muestra cómo funciona el Bounded Context de Gestión del Perfil dentro de la plataforma. El usuario interactúa mediante el PerfilController, que expone endpoints REST para crear, actualizar o consultar un perfil. Estas operaciones son gestionadas en la capa de aplicación por servicios como CrearPerfilHandler y ActualizarPerfilHandler, que orquestan la lógica de negocio. La capa de dominio concentra las reglas y validaciones en el agregado Perfil, que incluye el value object Preferencia y políticas como PerfilPolicy. La persistencia se realiza a través de PerfilRepository, implementado por PerfilRepositoryImpl, que comunica los datos hacia una base de datos MySQL. Además, servicios externos como NotificacionService y AlmacenamientoService permiten enviar alertas y gestionar fotos o logos de los perfiles.
 
 #### **2.6.4.6. Bounded Context Software Architecture Code Level Diagrams**
 
 ##### **2.6.4.6.1. Bounded Context Domain Layer Class Diagrams**
 
 <p align="center">
-  <img src="Images/57.jpg" alt="imagen" />
+  <img src="Images/clasesBC4.png" alt="imagen" />
 </p>
-
-Este diagrama de clases de la capa de dominio muestra la estructura central del Bounded Context de Gestión del Perfil. El agregado raíz Perfil orquesta los datos principales del postulante o empresa, garantizando la consistencia de la información. Dentro del agregado, el value object Preferencia representa configuraciones personales como intereses o notificaciones, mientras que PerfilPolicy define las reglas de negocio y validaciones aplicables a la creación o modificación de un perfil. Además, el PerfilAggregate actúa como punto de entrada para coordinar actualizaciones de datos y aplicar políticas, asegurando que los cambios se realicen de manera controlada y sin inconsistencias.
 
 ##### **2.6.4.6.2. Bounded Context Database Design Diagram**
 
 <p align="center">
-  <img src="Images/58.jpg" alt="imagen" />
+  <img src="Images/bdBC4.png" alt="imagen" />
 </p>
 
-Este diagrama de diseño de base de datos refleja cómo se almacenan los datos del Bounded Context de Gestión del Perfil. La tabla principal Perfil contiene los atributos clave del postulante o empresa (como nombre, correo, datos de contacto y tipo de perfil). A ella se relaciona la tabla Preferencia, que almacena configuraciones asociadas a cada perfil, incluyendo intereses y opciones de notificación. Ambas tablas están enlazadas mediante una relación de clave foránea, lo que garantiza integridad referencial entre un perfil y sus preferencias. Este diseño facilita consultas rápidas sobre la información personal y las configuraciones del usuario, manteniendo una estructura clara y normalizada.
+
+
+
+
 
 # **CONCLUSIONES Y RECOMENDACIONES**
 
