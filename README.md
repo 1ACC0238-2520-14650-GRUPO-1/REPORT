@@ -42,8 +42,8 @@
 | Versión  | Fecha  | Autores | Descripción de Modificación      |
 | :---: | :---: | ----- | ----- |
 | 1 (TB1) | 18/09/2025 | Santiago Iván Cárdenas Concha, Luis Piero Rodríguez Rodríguez, Luis Gustavo Román Pajuelo, Elvia Marcela Rodríguez Villa, Santiago Manuel Suárez Romero | Desarrollo de capitulos 1 y 2 |
-| 2 (TP1) | 9/10/2025 | Santiago Iván Cárdenas Concha, Luis Piero Rodríguez Rodríguez, Luis Gustavo Román Pajuelo, Elvia Marcela Rodríguez Villa, Santiago Manuel Suárez Romero | Desarrollo de capitulos 3 y 4 |
-| 3 (TB2) |  |  |   |
+| 2 (TP1) | 9/10/2025 | Santiago Iván Cárdenas Concha, Luis Piero Rodríguez Rodríguez, Luis Gustavo Román Pajuelo, Elvia Marcela Rodríguez Villa, Santiago Manuel Suárez Romero | Desarrollo de capitulos 3, 4 y sprint 1 |
+| 3 (TB2) | 13/11/2025 | Santiago Iván Cárdenas Concha, Luis Piero Rodríguez Rodríguez, Luis Gustavo Román Pajuelo, Elvia Marcela Rodríguez Villa, Santiago Manuel Suárez Romero | Desarrollo de sprint 2 |
 | 4 (TF1) |  |  |   |
 
 **OBJETIVOS SMART**
@@ -3110,23 +3110,27 @@ En el Sprint 2, la colaboración del equipo se orientó a coordinar cambios simu
 
 **Conclusiones:**
 
-* **Necesidad clara de una solución digital:**  
-  Los estudiantes, egresados y profesionales en transición muestran dificultades para organizar sus postulaciones laborales debido al uso de métodos dispersos (Excel, correos, notas). Esto confirma la pertinencia de LookUp como una aplicación centralizada para gestionar el proceso.  
-* **Centralización y seguimiento en tiempo real:**  
-  Existe un fuerte interés en contar con una herramienta que permita visualizar el estado de cada postulación, con notificaciones y métricas claras (número de entrevistas, rechazos y ofertas), lo cual incrementa la confianza y reduce la incertidumbre.  
-* **Valor del feedback y las métricas:**  
-  Los usuarios consideran crucial recibir retroalimentación de los procesos de selección y estadísticas de avance. Esto no solo mejora la organización, sino que también actúa como motivador y ayuda en la toma de decisiones estratégicas.  
-* **Factores de adopción clave:**  
-  La interfaz intuitiva, el acceso móvil y la simplicidad en el registro son condiciones indispensables para la aceptación de la app. Además, la integración de métricas y logros puede aumentar la motivación y el uso constante.
+- En general, el proyecto permitió darnos cuenta de que sí existe un problema real entre los estudiantes y personas que buscan trabajo: nadie tiene un control claro de sus postulaciones, y todo termina perdido entre correos, notas o Excel. LookUp, aunque sea un proyecto académico, demostró que una app que centraliza todo eso realmente ayudaría bastante a organizarse mejor.
+
+- El uso de Lean UX nos sirvió para entender mejor a los usuarios y no diseñar “a ciegas”. Las entrevistas, los perfiles y el análisis de necesidades mostraron que la mayoría quiere algo simple, rápido y desde el celular, así que el enfoque de la app va alineado con lo que ellos buscan sin complicarnos con funciones innecesarias.
+
+- Trabajar con DDD, arquitectura por capas y la división por bounded contexts ayudó a ordenar el backend y pensar en módulos más claros. Aunque sea un trabajo de curso, esto nos permitió tener una base más sólida y entender cómo se construyen sistemas más escalables en proyectos reales.
+
+- El análisis de competidores mostró que, aunque existen plataformas enormes como LinkedIn o Computrabajo, no hay ninguna enfocada específicamente en ayudar al usuario a organizarse de manera personal con sus postulaciones. Eso nos confirmó que nuestra idea tiene un espacio donde encaja bien, al menos conceptualmente.
+
+- A nivel de equipo, los sprints ayudaron bastante a organizar el trabajo y avanzar de forma ordenada. El primer sprint sirvió para armar la base y el segundo para mejorar seguridad, unir frontend y backend, y hasta empezar la parte para empresas. Aunque hubo retos, se nota un avance claro entre cada etapa.
 
 **Recomendaciones:**
 
-* **Enfocar la propuesta de valor en la centralización y simplicidad:**  
-  Resaltar en la comunicación y en la interfaz que LookUp permite tener todo en un solo lugar: postulaciones, documentos, estados y métricas. Esto refuerza la diferenciación frente a competidores y responde directamente al dolor principal de los usuarios.  
-* **Optimizar la experiencia móvil:**  
-  Asegurar que la aplicación sea ligera, responsiva y con un diseño intuitivo. Incluir tutoriales interactivos (onboarding) para que los nuevos usuarios entiendan rápidamente cómo registrar postulaciones, adjuntar documentos y revisar métricas.  
-* **Ampliar la personalización:**  
-  Incluir filtros avanzados y sugerencias según perfil académico, experiencia y sector laboral. Esto aumentará la relevancia de la información y reducirá la frustración de revisar ofertas poco alineadas.
+- Sería bueno incluir un pequeño tutorial dentro de la app para que los usuarios nuevos no se pierdan. Mucha gente está acostumbrada a usar notas o Excel, así que algo que les explique en segundos cómo registrar una postulación o adjuntar documentos haría que adopten la app más rápido.
+
+- Más adelante, si se sigue desarrollando el proyecto, sería útil mejorar el sistema de métricas. No solo contar entrevistas u ofertas, sino quizá mostrar patrones, promedios o recomendaciones; básicamente, hacer las métricas un poquito más inteligentes sin complicar la experiencia.
+
+- También sería recomendable que el proyecto considere alianzas con universidades o bolsas laborales si alguna vez se quisiera llevar más lejos. Ellos manejan grandes grupos de estudiantes que podrían usar algo así, y eso ayudaría bastante a validar la app con más usuarios reales.
+
+- Sería bueno seguir refinando la experiencia de usuario con pruebas simples, como A/B o tests rápidos con compañeros. A veces pequeños cambios en botones, textos o el flujo de registro pueden hacer la app mucho más cómoda y fácil de usar.
+
+- Finalmente, ya que se empezó la aplicación para empresas, sería recomendable seguir expandiendo ese lado del sistema. Si LookUp tiene ambas caras —candidatos y empleadores— se convierte en un ecosistema más completo, y eso le daría más valor incluso siendo un proyecto académico.
 
 # **BIBLIOGRAFÍA**
 
@@ -3139,13 +3143,3 @@ En el Sprint 2, la colaboración del equipo se orientó a coordinar cambios simu
 * Ongresso. (2023, 27 de septiembre). Labor market in Peru 2023–2024. *Ongresso.* [https://blog.ongresso.com/labor-market-in-peru-2023-2024](https://blog.ongresso.com/labor-market-in-peru-2023-2024)  
 * Redacción Gestión. (2024, 16 de abril). Ocho de cada 10 peruanos confían en las plataformas digitales para conseguir empleo. *Gestión.* [https://gestion.pe/economia/management-empleo/ocho-de-cada-10-peruanos-confian-en-las-plataformas-digitales-para-conseguir-empleo-procesos-de-seleccion-bumeran-noticia/](https://gestion.pe/economia/management-empleo/ocho-de-cada-10-peruanos-confian-en-las-plataformas-digitales-para-conseguir-empleo-procesos-de-seleccion-bumeran-noticia/)  
 * Why candidate abandonment is your job board’s biggest challenge in 2025\. (2024, 18 de diciembre). *UBIO.* [https://ub.io/blog-posts/why-candidate-abandonment-is-your-job-boards-biggest-challenge-in-2025](https://ub.io/blog-posts/why-candidate-abandonment-is-your-job-boards-biggest-challenge-in-2025)
-
-
-
-
-
-
-
-
-
-
