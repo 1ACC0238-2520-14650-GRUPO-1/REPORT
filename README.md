@@ -1323,90 +1323,181 @@ El diagrama de despliegue muestra como el software interactua con los servicios 
 
 #### **2.6.1.1. Domain Layer** 
 
-**Postulación (Entity):** Representa la solicitud de un candidato a un puesto publicado por una empresa.
+##### **Entity: Puesto**
 
-- **Atributos:** postulacionId, candidatoId, puestoId, fechaPostulacion, estado, documentosAdjuntos.  
-- **Métodos:** actualizarEstado(nuevoEstado), agregarDocumento(documento), registrarHito(descripcion, fecha).
+**Representación**  
+Entidad principal que modela un puesto disponible para recibir postulaciones.
 
-**PuestoPostulacion (Entity):** Representa un puesto de trabajo creado por una empresa.
+**Atributos**  
+- `puesto_id: UUID`  
+- `empresa_id: UUID`  
+- `titulo: str`  
+- `descripcion: str`  
+- `ubicacion: str`  
+- `salario_min: float | None`  
+- `salario_max: float | None`  
+- `moneda: str`  
+- `tipo_contrato: TipoContratoEnum`  
+- `requisitos: List[Requisito]`  
+- `estado: EstadoPuestoEnum`  
+- `fecha_publicacion: datetime`  
+- `fecha_cierre: datetime | None`
 
-- **Atributos:** puestoId, empresaId, titulo, descripcion, requisitos, fechaInicio, fechaFin, estadoPublicacion.  
-- **Métodos:** publicar(), cerrar(), actualizarRequisitos(nuevosRequisitos).
+**Métodos**  
+- `publicar()`: marca el puesto como publicado.  
+- `cerrar()`: marca el puesto como cerrado.  
+- `actualizar_informacion(...)`: modifica los atributos editables del puesto.  
+- `actualizar_requisitos(requisitos)`: reemplaza la lista de requisitos.  
 
-**EstadoPostulacion (ValueObject):** Representa los estados posibles de una postulación.
 
-- **Atributos:** valor (pendiente, en revisión, entrevista, oferta, rechazo).  
-- **Métodos:** esValido(nuevoEstado).
+##### **ValueObject: Requisito**
 
-**Hito (Entity):** Representa un evento relevante dentro de la postulación.
+**Atributos**  
+- `tipo: str`  
+- `descripcion: str`  
+- `es_obligatorio: bool`
 
-- **Atributos:** hitoId, fecha, descripcion.  
-- **Métodos:** actualizarDescripcion(nuevaDescripcion), cambiarFecha(nuevaFecha).
+**Métodos**  
+- Validaciones internas del tipo y obligatoriedad.  
 
-**LineaDeTiempo (ValueObject):** Registra los hitos relevantes de una postulación.
 
-- **Atributos:** listaHitos (colección de Hito).  
-- **Métodos:** agregarHito(fecha, descripcion).
+##### **ValueObject: TipoContratoEnum**
 
-**PostulacionAggregate (Aggregate):** Garantiza la consistencia entre la postulación, su estado y la línea de tiempo.
+**Atributos**  
+- Valores permitidos: `TIEMPO_COMPLETO`, `MEDIO_TIEMPO`, `TEMPORAL`, `FREELANCE`, `PRACTICAS`  
 
-- **Atributos:** postulacion, estado, lineaDeTiempo.  
-- **Métodos:** postularse(), cambiarEstado(nuevoEstado), registrarEvento(descripcion).
 
-**PostulacionRepository (Repository):** Define las operaciones de persistencia de postulaciones.
+##### **ValueObject: EstadoPuestoEnum**
 
-- **Métodos:** guardar(postulacion), obtenerPorId(postulacionId), obtenerPorCandidato(candidatoId), obtenerPorPuesto(puestoId).
+**Atributos**  
+- Valores permitidos: `ABIERTO`, `CERRADO`  
+
+
+##### **Aggregate: PuestoAggregate**
+
+**Atributos Internos**  
+- `puesto: Puesto`  
+- `requisitos: List[Requisito]`  
+- Lista interna de eventos del agregado.  
+
+**Reglas de consistencia**  
+- Un puesto debe mantener un estado válido (`ABIERTO` o `CERRADO`).  
+- Las actualizaciones deben preservar la validez de los valores de contrato, estado y datos obligatorios.  
+
+**Métodos Orquestadores**  
+- `publicar_puesto()`: publica el puesto.  
+- `cerrar_puesto()`: cierra el puesto.  
+- `actualizar_puesto(...)`: gestiona la edición completa del puesto.  
+
+
+##### **Domain Events**
+
+- `PuestoCreado`  
+- `PuestoActualizado`  
+- `PuestoCerrado`  
+
+
+
 
 #### **2.6.1.2. Interface Layer** 
 
-**PostulacionController(Controller):** Gestiona las operaciones de los candidatos.
+##### **Controller: PuestoController (FastAPI Router)**
 
-- **POST /postulacion:** Crear una nueva postulación.  
-- **GET /postulacion/{id}:** Consultar una postulación específica.  
-- **GET /postulaciones/candidato/{candidatoId}:** Ver todas las postulaciones de un candidato.
+**POST /api/puesto/**  
+Crea un nuevo puesto.  
 
-**PuestoPostulacionController (Controller):** Gestiona las operaciones de las empresas.
+**GET /api/puesto/{puesto_id}**  
+Obtiene un puesto por ID.  
 
-- **POST /puesto:** Registrar un nuevo puesto de postulación.  
-- **PUT /puesto/{id}/publicar:** Publicar un puesto.  
-- **PUT /puesto/{id}/cerrar:** Cerrar un puesto.  
-- **GET /puesto/{id}:** Consultar detalles de un puesto.
+**GET /api/puesto/**  
+Lista todos los puestos o los filtra por empresa o estado.  
+
+**PUT /api/puesto/{puesto_id}**  
+Actualiza los datos de un puesto existente.  
+
+**PATCH /api/puesto/{puesto_id}/estado**  
+Cambia el estado del puesto (abierto/cerrado).  
+
+
+
 
 #### **2.6.1.3. Application Layer** 
 
-**PostularHandler (Command Handler):** Maneja el comando de un candidato que desea postular a un puesto.
+##### **Commands**
 
-- **Métodos:** handle(postularCommand).
+- `CrearPuestoCommand`  
+- `ActualizarPuestoCommand`  
+- `CambiarEstadoPuestoCommand`  
 
-**ActualizarEstadoPostulacionHandler (Command Handler):** Gestiona el cambio de estado de una postulación.
 
-- **Métodos:** handle(actualizarEstadoCommand).
+##### **Command Handler: CrearPuestoHandler**
 
-**RegistrarPuestoHandler (Command Handler):** Procesa la creación de un nuevo puesto de postulación.
+**handle(command)**  
+Crea un nuevo puesto, lo encapsula en un agregado y lo guarda en el repositorio.  
 
-- **Métodos:** handle(registrarPuestoCommand).
 
-**PublicarPuestoHandler (Command Handler):** Maneja la publicación de un puesto.
+##### **Command Handler: ActualizarPuestoHandler**
 
-- **Métodos:** handle(publicarPuestoCommand).
+**handle(command)**  
+Obtiene el agregado, aplica las modificaciones correspondientes y guarda los cambios.  
 
-**PostulacionCreadaHandler (Event Handler):** Reacciona al evento de creación de una nueva postulación.
 
-- **Métodos:** onPostulacionCreada(event).
+##### **Command Handler: CambiarEstadoPuestoHandler**
 
-**EstadoPostulacionActualizadoHandler (Event Handler):** Reacciona al evento de cambio de estado en la postulación.
+**handle(command)**  
+Recupera el puesto, actualiza su estado y lo persiste.  
 
-- **Métodos:** onEstadoPostulacionActualizado(event).
+
+##### **Queries**
+
+- `ObtenerPuestoQuery`  
+- `ListarPuestosQuery`  
+
+
+##### **Query Handler: ObtenerPuestoQueryHandler**
+
+**handle(query)**  
+Retorna el puesto correspondiente al ID indicado.  
+
+
+##### **Query Handler: ListarPuestosQueryHandler**
+
+**handle(query)**  
+Retorna los puestos filtrados por empresa o estado, o todos si no se pasa filtro.  
+
+
+##### **Event Handlers**
+
+- `OnPuestoCreadoHandler`  
+- `OnPuestoActualizadoHandler`  
+- `OnPuestoCerradoHandler`  
+
 
 #### **2.6.1.4. Infrastructure Layer** 
 
-**PostulacionRepositoryImpl (Repository Impl):** Implementa la persistencia de postulaciones.
+##### **ORM Models (SQLAlchemy)**
 
-- **Métodos:** guardar(postulacion), obtenerPorId(postulacionId), obtenerPorCandidato(candidatoId), obtenerPorPuesto(puestoId).
+**PuestoModel**  
+- Tabla que persiste los puestos.  
+- Atributos: id, empresa_id, titulo, descripcion, ubicacion, salarios, moneda, tipo_contrato, requisitos (JSON), estado, fechas.  
 
-**PuestoPostulacionRepositoryImpl (Repository Impl):** Implementa la persistencia de los puestos de postulación.
 
-- **Métodos:** guardar(puesto), obtenerPorId(puestoId), obtenerPorEmpresa(empresaId).
+##### **Repository: PuestoRepositoryImpl**
+
+**Métodos implementados**  
+- `guardar(aggregate)`  
+- `obtener_por_id(puesto_id)`  
+- `listar_por_empresa(empresa_id)`  
+- `listar_por_estado(estado)`  
+- `listar_todos()`  
+- `eliminar(puesto_id)`  
+
+
+##### **Persistencia**
+
+- Conexión a PostgreSQL usando SQLAlchemy.  
+- Uso de `Base.metadata.create_all(bind=engine)` para crear tablas.  
+- Repositorio serializa/deserializa requisitos como JSON.  
 
 #### **2.6.1.5. Bounded Context Software Architecture Component Level Diagrams** 
 
@@ -1434,51 +1525,139 @@ El diagrama de clases representa los principales elementos del dominio de postul
 
 El diagrama de base de datos transforma los conceptos del dominio en tablas relacionales. La entidad Postulación guarda la información central de cada solicitud, asociada a PuestoPostulación y al candidato. Los estados de postulación se representan como un valor controlado, mientras que la línea de tiempo registra los hitos de la evolución de cada postulación. Este diseño garantiza integridad referencial y permite consultas eficientes para obtener postulaciones por candidato, puesto o estado.
 
-### **2.6.2. Bounded Context: Gestión de Contacto de Postulación**
+### **2.6.2. Bounded Context: Gestión de Contacto de Postulación** 
 
-#### **2.6.2.1. Domain Layer**
+#### **2.6.2.1. Domain Layer** 
 
-**ContactoPostulación (Entity):** Representa la interacción entre la empresa y el postulante en una postulación específica.
+##### **Entity: ContactoPostulacion**
 
-- **Atributos:** contactoId, postulacionId, empresaId, perfilId, tipoMensaje, motivoRechazo, fechaHora.  
-- **Métodos:** asociarFeedback(feedback), marcarComoAceptado(), marcarComoRechazado().
+**Representación**  
+Entidad que registra una interacción o comunicación enviada por la empresa hacia el postulante dentro del proceso de postulación.
 
-**Feedback(ValueObject):** Representa el contenido del feedback enviado al postulante.
+**Atributos**  
+- `contacto_id: UUID`  
+- `postulacion_id: UUID`  
+- `empresa_id: UUID`  
+- `perfil_id: UUID`  
+- `tipo_mensaje: TipoMensajeEnum`  
+- `motivo_rechazo: str | None`  
+- `fecha_hora: datetime`  
 
-- **Atributos:** tipo (aceptacion, rechazo, informativo), motivoRechazo (opcional), mensajeTexto.  
-- **Métodos:** validarMotivo(), formatearMensaje().
-
-**ContactoAggregate (Aggregate):** Es el punto de entrada para gestionar las interacciones de la empresa hacia el postulante.
-
-- **Atributos:** contactoPostulacion, listaFeedback.  
-- **Métodos:** procesarFeedback(feedback), actualizarEstadoPostulacion().
-
-**ContactoRepository (Repository):** Define las operaciones para guardar y recuperar contactos asociados a postulaciones.
-
-- **Métodos**: guardar(contacto), obtenerpostulacion(postulacionID)
-
-#### **2.6.2.2. Interface Layer**
-
-**ContactoController (Controller):** Gestiona las solicitudes HTTP relacionadas con la comunicación entre el postulante y la empresa.
-
-- **POST /contacto/{postulaciónId}/feedback** : Envía un feedback al postulante.  
-- **GET /contacto/{postulaciónId}** : Recupera los mensajes asociados a una postulación.  
-- **PUT /contacto/{contactoId}/estado** : Actualiza el estado de un contacto (aceptado/rechazado).
-
-#### **2.6.2.3. Application Layer**
-
-**EnviarFeedbackCommandHandler:** Maneja el envío de feedback desde la empresa al postulante.
-
-- **Métodos:**handle(enviarFeedbackCommand).
-
-**ActualizarEstadoContactoHandler:** Permite cambiar el estado de un contacto (aceptado, rechazado).
-
-- **Métodos:**handle(actualizarEstadoCommand).
+**Métodos**  
+- `asociar_feedback(feedback)`: vincula un feedback validado al contacto.  
+- `marcar_como_aceptado()`: ajusta el estado del contacto como aceptación.  
+- `marcar_como_rechazado()`: registra un rechazo y su motivo.  
 
 
-#### **2.6.2.4. Infrastructure Layer**
+##### **ValueObject: Feedback**
 
-- **ContactoRepositoryImpl:** Implementa la interfaz definida en el dominio para guardar y recuperar contactos. 
+**Atributos**  
+- `tipo: TipoFeedbackEnum`  
+- `mensaje_texto: str`  
+- `motivo_rechazo: str | None`
+
+**Métodos**  
+- `validar_motivo()`: valida que el motivo exista cuando el tipo es rechazo.  
+- `formatear_mensaje()`: construye un mensaje completo según el tipo de feedback.  
+
+
+##### **ValueObject: TipoFeedbackEnum**
+
+**Valores permitidos**  
+- `ACEPTACION`  
+- `RECHAZO`  
+- `INFORMATIVO`  
+
+
+##### **ValueObject: TipoMensajeEnum**
+
+**Valores permitidos**  
+- `SOLICITUD_INFO`  
+- `FEEDBACK`  
+- `ACTUALIZACION`  
+
+
+##### **Aggregate: ContactoAggregate**
+
+**Atributos Internos**  
+- `contacto_postulacion: ContactoPostulacion`  
+- `lista_feedback: List[Feedback]`  
+
+**Reglas de consistencia**  
+- Un feedback de tipo rechazo debe incluir un motivo válido.  
+- El agregado debe mantener el orden temporal de los feedbacks enviados.  
+
+**Métodos Orquestadores**  
+- `procesar_feedback(feedback)`: asocia feedback y registra evento.  
+- `actualizar_estado_postulacion()`: emite el evento que solicita cambio de estado en el BC de Postulación.  
+
+
+##### **Domain Events**
+
+- `FeedbackEnviado`  
+- `SolicitudCambioEstadoPostulacion`  
+
+
+
+
+#### **2.6.2.2. Interface Layer** 
+
+##### **Controller: ContactoController (FastAPI Router)**
+
+**POST /api/contacto/feedback**  
+Envía un feedback asociado a una postulación.  
+
+
+
+
+#### **2.6.2.3. Application Layer** 
+
+##### **Commands**
+
+- `EnviarFeedbackCommand`  
+
+
+##### **Command Handler: EnviarFeedbackCommandHandler**
+
+**handle(command)**  
+Procesa el envío de feedback, actualiza el agregado, registra el mensaje y persiste el contacto.  
+
+
+##### **Event Handlers**
+
+- `OnFeedbackEnviadoHandler`  
+- `OnSolicitudCambioEstadoPostulacionHandler`  
+
+
+
+
+#### **2.6.2.4. Infrastructure Layer** 
+
+##### **ORM Models (SQLAlchemy)**
+
+**ContactoPostulacionModel**  
+- Tabla que persiste mensajes de contacto.  
+- Atributos: id, postulacion_id, empresa_id, perfil_id, tipo_mensaje, motivo_rechazo, fecha_hora.  
+
+**FeedbackModel**  
+- Tabla que persiste feedbacks asociados al contacto.  
+- Atributos: id, contacto_id, tipo, mensaje_texto, motivo_rechazo.  
+
+
+##### **Repository: ContactoRepositoryImpl**
+
+**Métodos implementados**  
+- `guardar(contacto_aggregate)`  
+- `obtener_por_id(contacto_id)`  
+- `obtener_por_postulacion(postulacion_id)`  
+
+
+##### **Persistencia**
+
+- Utiliza SQLAlchemy y `SessionLocal`.  
+- Persiste contacto y feedbacks en tablas separadas con relación uno-a-muchos.  
+- Los feedbacks se sobrescriben completamente al actualizar el agregado.
+  
 
 #### **2.6.2.5. Bounded Context Software Architecture Component Level Diagrams**
 
@@ -1506,73 +1685,218 @@ El diagrama de clases del Domain Layer de Gestión de Contacto de Postulación m
 
 El diagrama de diseño de base de datos del Bounded Context: Gestión de Contacto de Postulación define dos tablas principales: ContactoPostulacion, que almacena los datos de cada interacción entre empresa y postulante (incluyendo identificadores, fecha y tipo de mensaje), y Feedback, que guarda los mensajes enviados con su tipo, motivo de rechazo y contenido textual. La relación entre ambas es de uno a muchos, ya que un contacto puede generar múltiples feedbacks asociados. Este diseño permite mantener un historial claro y estructurado de las comunicaciones, asegurando integridad referencial mediante la clave foránea contacto\_id.
 
-### **2.6.3. Bounded Context: Gestión de Métricas**
+### **2.6.3. Bounded Context: Gestión de Métricas** 
 
-#### **2.6.3.1. Domain Layer**
+#### **2.6.3.1. Domain Layer** 
 
-**MetricaRegistro (Entity):** Guarda las metricas del usuario
+##### **Entity: MetricaPerfil**
 
-Atributos: perfilId, totalPostulaciones, totalEntrevistas, totalExitos, totalRechazos, tasaExito.
+**Representación**  
+Entidad que agrupa las métricas principales de un perfil/postulante a partir del estado actual de sus postulaciones.
 
-Metodos: aumentarPostulaciones(), aumentarEntrevistas(), aumentarOfertas(), aumentarRechazos(), tasaExito(totalPostulaciones, totalExitos) 
+**Atributos**  
+- `perfil_id: UUID`  
+- `total_postulaciones: int`  
+- `total_entrevistas: int`  
+- `total_exitos: int`  
+- `total_rechazos: int`  
+- `tasa_exito: float`  
 
-**Logro (Value Object)**: Representa un logro de gamificación alcanzado al cumplir un umbral (ej. 5 postulaciones, 3 entrevistas).
+**Métodos**  
+- `calcular_tasa_exito()`:  
+  - Calcula la tasa de éxito en función de `total_exitos` y `total_postulaciones`.  
+  - Mantiene la invariante de no dividir entre cero.  
+- `actualizar_totales(postulaciones)`:  
+  - Recorre las postulaciones asociadas al perfil y recalcula los contadores.  
 
-**Atributos**: idLogro, nombreLogro, umbral, fechaObtencion.
 
-**Métodos**: verificarLogro(totalPostulaciones, totalEntrevistas, totalExitos).
+##### **Entity: Logro**
 
-**MetricaAggregate (Aggregate):** Agrupa la entidad MetricaRegistro y su lista de Logro. Sirve como “punto central” para actualizar los contadores, recalcular la tasa y otorgar logros sin inconsistencias.
+**Representación**  
+Entidad que representa un logro gamificado alcanzado por un perfil/postulante según sus métricas.
 
-**Atributos:** metricaRegistro, listaLogros.
+**Atributos**  
+- `id_logro: UUID`  
+- `perfil_id: UUID`  
+- `nombre_logro: str`  
+- `umbral: int`  
+- `fecha_obtencion: datetime`  
 
-**Métodos:** aplicarPostulacionCreada(), aplicarEstadoActualizado(estadoAnterior, estadoNuevo), aplicarPostulacionEliminada(), evaluarLogros(listaReglas).
+**Métodos**  
+- `es_alcanzado(total_actual: int) -> bool`:  
+  - Verifica si el valor actual de una métrica supera o iguala el umbral.  
+- `registrar_obtencion(fecha: datetime)`:  
+  - Registra la fecha de obtención del logro cuando se cumple el umbral.  
 
-**MetricaRepository (Repository):** Define cómo guardar y recuperar las métricas del postulante (la implementación real va en otra capa).
 
-**Métodos:** guardar(metricaAggregate), obtenerPorPostulante(postulanteId).
+##### **ValueObject: ContadorMetrica**
 
-#### **2.6.3.2. Interface Layer**
+**Representación**  
+Objeto de valor que encapsula un contador entero de una métrica específica.
 
-**MetricaController (Controller):** Gestiona las solicitudes HTTP relacionadas con los indicadores y logros del postulante (conteos, tasa de éxito y gamificación).
+**Atributos**  
+- `nombre: str`  
+- `valor: int`  
 
-**GET /metricas/{perfilId}** : Devuelve el resumen de indicadores del postulante (totalPostulaciones, totalEntrevistas, totalOfertas, totalRechazos, tasaExito).
+**Métodos**  
+- `incrementar(n: int = 1)`: aumenta el valor respetando que no sea negativo.  
+- `decrementar(n: int = 1)`: disminuye el valor sin permitir valores menores a cero.  
 
-**GET /metricas/{perfilId}/logros** : Lista los logros obtenidos por el postulante (nombreLogro, umbral, fechaObtencion).
 
-**POST /metricas/{perfilId}/recalcular** : Recalcula todos los indicadores y la tasa a partir del historial consolidado (útil para sincronizaciones/correcciones).
+##### **ValueObject: TipoLogroEnum**
 
-#### **2.6.3.3. Application Layer**
+**Valores**  
+- `PRIMERA_POSTULACION`  
+- `PRIMERA_ENTREVISTA`  
+- `PRIMERA_OFERTA`  
+- `DIEZ_POSTULACIONES`  
+- `CINCO_ENTREVISTAS`  
+- `TRES_OFERTAS`  
 
-**RecalcularMetricasHandler (Command Handler):** Recalcula todos los contadores y la tasa de éxito a partir del historial consolidado del postulante.
 
-**Métodos:** handle(recalcularMetricasCommand).
+##### **Aggregate: MetricaAggregate**
 
-**ConsultarResumenMetricasHandler (Query Handler):** Devuelve el registro de métricas del postulante (contadores \+ tasa).
+**Atributos internos**  
+- `metrica_perfil: MetricaPerfil`  
+- `logros: List[Logro]`  
 
-**Métodos:** handle(consultarResumenMetricasQuery).
+**Reglas de consistencia**  
+- Los logros asociados deben corresponder siempre al mismo `perfil_id` que la métrica.  
+- La `tasa_exito` debe ser coherente con los contadores internos (`total_exitos`, `total_postulaciones`).  
 
-**ListarLogrosHandler (Query Handler):** Retorna los logros alcanzados por el postulante.
+**Métodos orquestadores**  
+- `recalcular_desde_postulaciones(postulaciones)`:  
+  - Orquesta el recálculo de todos los contadores a partir del listado de postulaciones.  
+  - Actualiza `metrica_perfil` y sincroniza los logros alcanzados.  
+- `evaluar_logros()`:  
+  - Recorre la configuración de logros y marca como alcanzados aquellos cuyo umbral se cumple.  
 
-**Métodos:** handle(listarLogrosQuery).
 
-**OnPostulacionCreadaHandler (Event Handler):** Escucha el evento externo *PostulacionCreada* emitido por Gestión de Postulación y actualiza el agregado de métricas del postulante (+1 en totalPostulaciones, recalcular tasa, evaluar logros).
 
-**Métodos:** onPostulacionCreada(event).
+#### **2.6.3.2. Interface Layer** 
 
-**OnEstadoPostulacionActualizadoHandler (Event Handler):** Escucha *EstadoPostulacionActualizado* y ajusta contadores según transición (→ entrevista/oferta/rechazo). Recalcula la tasa de éxito y evalúa logros.
+##### **Controller: MetricaController (FastAPI Router)**
 
-**Métodos:** onEstadoActualizado(event).
+**GET /api/metricas/resumen/{perfil_id}**  
+- Devuelve un resumen de métricas agregadas para el perfil indicado.  
+- Respuesta basada en `MetricaResumenResponse` (total postulaciones, entrevistas, éxitos, rechazos y tasa de éxito).  
 
-**OnPostulacionEliminadaHandler (Event Handler):** Escucha *PostulacionEliminada* y revierte el impacto de esa postulación en las métricas (decrementos y recálculo correspondiente).
+**GET /api/metricas/logros/{perfil_id}**  
+- Lista todos los logros alcanzados por el perfil.  
+- Respuesta basada en `LogroResponse` (id de logro, nombre, umbral, fecha de obtención).  
 
-**Métodos:** onPostulacionEliminada(event).
+**GET /api/metricas/recalcular/{perfil_id}**  
+- Fuerza el recálculo completo de las métricas para el perfil indicado.  
+- Ejecuta la lógica de recálculo y devuelve el nuevo `MetricaResumenResponse`.  
 
-#### **2.6.3.4. Infrastructure Layer**
+**GET /api/metricas/contadores/ofertas/{postulante_id}**  
+- Devuelve el contador de ofertas alcanzadas para un postulante específico.  
+- Respuesta basada en `ContadorResponse` (postulante_id, total).  
 
-**MetricaRepositoryImpl (Repository Impl):** Implementa la interfaz MetricaRepository del dominio para persistir y recuperar el agregado de métricas de un postulante.
+**GET /api/metricas/contadores/entrevistas/{postulante_id}**  
+- Devuelve el contador de entrevistas para un postulante específico.  
+- Respuesta basada en `ContadorResponse`.  
 
-Métodos: guardar(metricaAggregate), obtenerPorPostulante(perfilId).
+**GET /api/metricas/contadores/rechazos/{postulante_id}**  
+- Devuelve el contador de rechazos acumulados para un postulante específico.  
+- Respuesta basada en `ContadorResponse`.  
+
+
+
+#### **2.6.3.3. Application Layer** 
+
+##### **Commands**
+
+- `RecalcularMetricasCommand`  
+  - Datos: `perfil_id: UUID`.  
+  - Intención: disparar el recálculo completo de las métricas de un perfil a partir de sus postulaciones actuales.  
+
+
+##### **Command Handler: RecalcularMetricasHandler**
+
+**handle(command: RecalcularMetricasCommand)**  
+- Obtiene las postulaciones del perfil a través del repositorio de métricas.  
+- Construye o actualiza el `MetricaAggregate` correspondiente.  
+- Aplica las reglas de negocio para recalcular contadores, tasa de éxito y logros.  
+- Devuelve una estructura de resumen (`MetricaResumenResponse`) actualizada.  
+
+
+##### **Queries**
+
+- `ConsultarResumenMetricasQuery`  
+  - Datos: `perfil_id: UUID`.  
+  - Intención: consultar el resumen de métricas calculado en tiempo real para un perfil.  
+
+- `ListarLogrosQuery`  
+  - Datos: `perfil_id: UUID`.  
+  - Intención: obtener la lista de logros asociados al perfil.  
+
+- `ContadorOfertasQuery`  
+  - Datos: `postulante_id: UUID`.  
+  - Intención: calcular la cantidad de postulaciones en estado oferta.  
+
+- `ContadorEntrevistasQuery`  
+  - Datos: `postulante_id: UUID`.  
+  - Intención: calcular la cantidad de postulaciones en estado entrevista.  
+
+- `ContadorRechazosQuery`  
+  - Datos: `postulante_id: UUID`.  
+  - Intención: calcular la cantidad de postulaciones en estado rechazo.  
+
+
+##### **Query Handlers**
+
+- `ConsultarResumenMetricasHandler`  
+  - `handle(query: ConsultarResumenMetricasQuery)`  
+  - Consulta el repositorio de métricas, consolida los contadores y devuelve el resumen de métricas.  
+
+- `ListarLogrosHandler`  
+  - `handle(query: ListarLogrosQuery)`  
+  - Obtiene la configuración y el estado de logros para el perfil, filtrando solamente los logros ya alcanzados.  
+
+- `ContadorOfertasQueryHandler`  
+  - `handle(query: ContadorOfertasQuery)`  
+  - Filtra las postulaciones del postulante por estado oferta y devuelve el total.  
+
+- `ContadorEntrevistasQueryHandler`  
+  - `handle(query: ContadorEntrevistasQuery)`  
+  - Filtra las postulaciones del postulante por estado entrevista y devuelve el total.  
+
+- `ContadorRechazosQueryHandler`  
+  - `handle(query: ContadorRechazosQuery)`  
+  - Filtra las postulaciones del postulante por estado rechazo y devuelve el total.  
+
+
+
+#### **2.6.3.4. Infrastructure Layer** 
+
+##### **Repository: MetricaRepositoryImpl**
+
+**Responsabilidad**  
+Implementación del contrato de repositorio de métricas utilizando SQLAlchemy y los modelos de postulación.
+
+**Métodos implementados (conceptuales)**  
+- `obtener_resumen_metricas(perfil_id: UUID) -> MetricaPerfil`  
+  - Realiza consultas sobre las postulaciones asociadas al perfil para calcular los contadores y la tasa de éxito.  
+
+- `obtener_logros(perfil_id: UUID) -> List[Logro]`  
+  - Determina los logros alcanzados en función de las métricas actuales y la configuración de umbrales.  
+
+- `contar_ofertas(postulante_id: UUID) -> int`  
+- `contar_entrevistas(postulante_id: UUID) -> int`  
+- `contar_rechazos(postulante_id: UUID) -> int`  
+
+Todas las operaciones se realizan en modo de solo lectura sobre el estado actual de las postulaciones.  
+
+
+##### **Persistencia**
+
+- Uso de `SessionLocal` para la gestión de sesiones de base de datos.  
+- Las métricas no se almacenan como tablas propias; se calculan en tiempo real a partir de las tablas de postulaciones.  
+- No se generan snapshots persistidos de métricas; los resultados devueltos son agregados calculados en cada consulta.  
+
+
+
 
 #### **2.6.3.5. Bounded Context Software Architecture Component Level Diagrams**
 
@@ -1604,149 +1928,277 @@ La tabla logro almacena los hitos de gamificación alcanzados por cada postulant
 
 Finalmente, la tabla perfil, gestionada externamente por el Bounded Context de Perfil, actúa como referencia externa para enlazar métricas con usuarios registrados en el sistema. Este diseño asegura la integridad referencial y permite que las métricas y logros se consulten y actualicen de manera consistente con la información del postulante.
 
-### **2.6.4. Bounded Context: Gestión del Perfil**
+### **2.6.4. Bounded Context: Gestión de Perfil** 
 
-#### **2.6.4.1. Domain LayerPerfil (Entity)**
+#### **2.6.4.1. Domain Layer** 
 
-Perfil (Entity): Representa el perfil de un usuario dentro de la aplicación (puede ser postulante o empresa).
+##### **Entity: Perfil**
+
+**Representación**  
+Entidad que representa el perfil principal de un usuario dentro del sistema (con foco en el perfil de postulante/candidato).
+
+**Atributos**  
+- `perfil_id: UUID`  
+- `tipo_perfil: TipoPerfilEnum`  
+- `datos_personales: dict`  
+  - `nombre: str`  
+  - `email: str`  
+  - `tipo_cuenta: str` (candidato, empresa, admin)  
+  - `datos_contacto: dict` (teléfono, redes, etc.)  
+  - `experiencias: List[ExperienciaLaboral]`  
+  - `educacion: List[Educacion]`  
+  - `habilidades: List[str]`  
+  - `cv_url: Optional[str]`  
+  - `documentos: List[dict]` (cuando se usan documentos asociados al perfil)  
+- `estado: EstadoPerfilEnum`  
+- `fecha_creacion: datetime`  
+- `fecha_actualizacion: Optional[datetime]`  
 
-**Atributos**: perfilId, tipoPerfil (Postulante/Empresa), datosPersonales, preferencias, rolAsignado, fechaCreacion, fechaActualizacion.
+**Métodos**  
+- `actualizar_datos(datos_actualizados: dict)`  
+  - Actualiza `datos_personales` con la información recibida.  
+  - Mantiene la consistencia de claves (nombre, email, datos_contacto, etc.).  
+  - Actualiza `fecha_actualizacion`.  
+- `configurar_preferencias(preferencias: dict)`  
+  - Aplica cambios de preferencia del postulante (por ejemplo, estado del perfil u otras banderas).  
+  - Garantiza que el `estado` siempre sea un valor válido de `EstadoPerfilEnum`.  
+- `marcar_como_completo()`  
+  - Cambia el `estado` a `COMPLETO` cuando los datos mínimos requeridos están presentes.  
+- `bloquear()`  
+  - Cambia el `estado` a `BLOQUEADO` cuando se aplica alguna restricción.  
 
-**Métodos**: crearPerfil(datos), actualizarDatos(datos), asignarRol(rol), configurarPreferencias(preferencias).
 
-Preferencia (Value Object)
+##### **ValueObject: ExperienciaLaboral**
+
+**Representación**  
+Experiencia profesional asociada al perfil de candidato.
 
-Representa las configuraciones personalizadas del usuario (notificaciones, intereses laborales, filtros de candidatos).
+**Atributos**  
+- `empresa: str`  
+- `puesto: str`  
+- `fecha_inicio: datetime`  
+- `fecha_fin: Optional[datetime]`  
+- `descripcion: Optional[str]`  
 
-**Atributos**: idPreferencia, tipoPreferencia, valor, fechaConfiguracion.
+**Métodos**  
+- `es_actual() -> bool`  
+  - Retorna `True` si `fecha_fin` es `None`.  
 
-**Métodos**: validarPreferencia(), actualizarPreferencia(nuevoValor).
 
-**PerfilAggregate (Aggregate)**
+##### **ValueObject: Educacion**
 
-Sirve como raíz de consistencia para todo lo relacionado al perfil (entidad Perfil, sus preferencias y reglas de validación).
+**Representación**  
+Formación académica del candidato.
 
-**Atributos**: perfil (entidad), listaPreferencias, historialCambios.
+**Atributos**  
+- `institucion: str`  
+- `titulo: str`  
+- `fecha_inicio: datetime`  
+- `fecha_fin: Optional[datetime]`  
+- `descripcion: Optional[str]`  
 
-**Métodos**: aplicarCreacionPerfil(), aplicarActualizacionDatos(), aplicarCambioFoto(), aplicarConfiguracionPreferencias(), aplicarActualizacionEmpresa().
+**Métodos**  
+- `esta_en_curso() -> bool`  
+  - Retorna `True` si `fecha_fin` es `None`.  
 
-PerfilRepository (Repository)
 
-Define cómo se guarda y recupera la información del perfil en el sistema.
+##### **ValueObject: TipoPerfilEnum**
 
-**Métodos**: guardar(perfilAggregate), obtenerPorId(perfilId), obtenerPorTipo(tipoPerfil).
+**Valores típicos**  
+- `POSTULANTE`  
+- `EMPRESA`  
+- `ADMIN`  
 
-#### 
 
-#### **2.6.4.2. Interface Layer**
+##### **ValueObject: EstadoPerfilEnum**
 
-**PerfilPostulanteController (Controller)**
+**Valores**  
+- `INCOMPLETO`  
+- `COMPLETO`  
+- `VERIFICADO`  
+- `BLOQUEADO`  
 
-Gestiona las operaciones de los candidatos/postulantes.
 
-**POST /perfil/postulante**: Crear un nuevo perfil de postulante.
+##### **Aggregate: PerfilAggregate**
 
-**PUT /perfil/postulante/{id}/datos**: Actualizar datos personales del postulante.
+**Atributos internos**  
+- `perfil: Perfil`  
 
-**PUT /perfil/postulante/{id}/foto**: Actualizar foto de perfil del postulante.
+**Reglas de consistencia**  
+- Cada `PerfilAggregate` agrupa exactamente un `Perfil`.  
+- El `estado` debe ser coherente con la información disponible (por ejemplo, un perfil verificado no puede estar incompleto).  
+- Todas las estructuras internas (`experiencias`, `educacion`, `habilidades`) se almacenan bajo el mismo `perfil_id`.  
 
-**PUT /perfil/postulante/{id}/preferencias**: Configurar preferencias de notificaciones/intereses laborales.
+**Métodos orquestadores**  
+- `crear_perfil(datos_personales_iniciales: dict) -> PerfilAggregate`  
+  - Inicializa el perfil con datos básicos (nombre, email, tipo_cuenta, datos_contacto).  
+  - Deja el estado en `INCOMPLETO` por defecto.  
+- `actualizar_datos_postulante(datos: dict)`  
+  - Orquesta la actualización de datos personales y detalle de candidato (experiencias, educación, habilidades, cv_url).  
+  - Actualiza `fecha_actualizacion`.  
+- `configurar_preferencias_postulante(preferencias: dict)`  
+  - Orquesta cambios de estado o banderas de configuración relacionadas al uso del perfil.  
 
-**GET /perfil/postulante/{id}**: Consultar información del perfil del postulante.
 
-PerfilEmpresaController (Controller)
 
-Gestiona las operaciones de los perfiles empresariales.
+#### **2.6.4.2. Interface Layer** 
 
-**POST /perfil/empresa**: Crear un nuevo perfil de empresa.
+##### **Controller: PerfilController (FastAPI Router /api/perfil)**
 
-**PUT /perfil/empresa/{id}/datos**: Actualizar datos de la empresa.
+**POST /api/perfil/**  
+- Crea un nuevo perfil de usuario (principalmente perfil de postulante).  
+- Entrada basada en `PerfilCreate` (nombre, email, tipo_cuenta, datos_contacto).  
+- Retorna `PerfilResponse` con `perfil_id` generado, estado inicial `INCOMPLETO` y fechas de registro/actualización.  
 
-**PUT /perfil/empresa/{id}/logo**: Actualizar el logo de la empresa.
+**GET /api/perfil/{perfil_id}**  
+- Obtiene el detalle de un perfil específico.  
+- Utiliza el `perfil_id` como identificador.  
+- Devuelve `PerfilResponse` con datos personales y estado del perfil.  
 
-**PUT /perfil/empresa/{id}/responsable**: Asignar un responsable de la empresa.
+**GET /api/perfil/**  
+- Lista perfiles disponibles (enfoque en perfiles de postulante).  
+- Puede filtrar por `tipo_cuenta` y `estado` (según parámetros de consulta).  
+- Devuelve una lista de `PerfilResponse`.  
 
-**PUT /perfil/empresa/{id}/preferencias**: Configurar preferencias de publicación y filtros de candidatos.
+**PUT /api/perfil/{perfil_id}**  
+- Actualiza los datos principales de un perfil (nombre, email, datos_contacto).  
+- Entrada basada en `PerfilUpdate`.  
+- Devuelve el `PerfilResponse` con los datos ya actualizados.  
 
-**GET /perfil/empresa/{id}**: Consultar información del perfil de la empresa.
+**PATCH /api/perfil/{perfil_id}/estado**  
+- Cambia el estado del perfil (`INCOMPLETO`, `COMPLETO`, `VERIFICADO`, `BLOQUEADO`).  
+- Recibe un `EstadoPerfilEnum`.  
+- Devuelve el `PerfilResponse` con el nuevo estado y fecha de última actualización.  
 
-#### 2.6.4.3. Application Layer
 
-CrearPerfilPostulanteHandler (Command Handler): Maneja la creación de un nuevo perfil de postulante.
+##### **Controller: PerfilCandidatoController (FastAPI Router /api/perfil/candidato)**
 
-Métodos: handle(crearPerfilPostulanteCommand).
+**POST /api/perfil/candidato**  
+- Crea o asocia el detalle de candidato a un `perfil_id` existente.  
+- Entrada basada en `PerfilCandidatoCreate` (experiencias, educación, habilidades, cv_url).  
+- Devuelve `PerfilCandidatoResponse` con el identificador del perfil candidato y su detalle.  
 
-ActualizarDatosPostulanteHandler (Command Handler): Gestiona la actualización de los datos personales de un postulante.
+**GET /api/perfil/candidato/{perfil_id}**  
+- Obtiene la información de candidato asociada a un `perfil_id`.  
+- Devuelve `PerfilCandidatoResponse` (experiencias, educación, habilidades, cv_url).  
 
-Métodos: handle(actualizarDatosPostulanteCommand).
+**PUT /api/perfil/candidato/{perfil_id}**  
+- Actualiza la información de candidato (experiencias, educación, habilidades, cv_url).  
+- Entrada basada en `PerfilCandidatoUpdate`.  
+- Devuelve `PerfilCandidatoResponse` con los datos ya actualizados.  
 
-ConfigurarPreferenciasPostulanteHandler (Command Handler): Procesa la configuración de preferencias del postulante (intereses, notificaciones).
 
-Métodos: handle(configurarPreferenciasPostulanteCommand).
 
-ActualizarFotoPostulanteHandler (Command Handler): Maneja la actualización de la foto de perfil del postulante.
+#### **2.6.4.3. Application Layer** 
 
-Métodos: handle(actualizarFotoPostulanteCommand).
+##### **Commands**
 
-CrearPerfilEmpresaHandler (Command Handler): Procesa la creación de un nuevo perfil de empresa.
+- `CrearPerfilPostulanteCommand`  
+  - Datos: `datos_personales: dict` (nombre, email, tipo_cuenta, datos_contacto, etc.).  
+  - Intención: crear un nuevo perfil de postulante.  
 
-Métodos: handle(crearPerfilEmpresaCommand).
+- `ActualizarDatosPostulanteCommand`  
+  - Datos: `perfil_id: UUID`, `datos: dict`.  
+  - Intención: actualizar los datos del perfil (nombre, email, datos_contacto, detalle de candidato, etc.).  
 
-ActualizarDatosEmpresaHandler (Command Handler): Gestiona la actualización de datos de la empresa.
+- `ConfigurarPreferenciasPostulanteCommand`  
+  - Datos: `perfil_id: UUID`, `preferencias: dict`.  
+  - Intención: configurar preferencias del postulante (por ejemplo, estado del perfil).  
 
-Métodos: handle(actualizarDatosEmpresaCommand).
 
-ActualizarLogoEmpresaHandler (Command Handler): Maneja la actualización del logo de la empresa.
+##### **Command Handlers**
 
-Métodos: handle(actualizarLogoEmpresaCommand).
+- `CrearPerfilPostulanteHandler`  
+  - `handle(command: CrearPerfilPostulanteCommand)`  
+  - Crea un nuevo `PerfilAggregate` a partir de los datos personales.  
+  - Inicializa el estado del perfil como `INCOMPLETO`.  
+  - Persiste el perfil mediante el repositorio de perfil y devuelve el `perfil_id`.  
 
-#### 2.6.4.4. Infrastructure Layer
+- `ActualizarDatosPostulanteHandler`  
+  - `handle(command: ActualizarDatosPostulanteCommand)`  
+  - Recupera el `PerfilAggregate` existente.  
+  - Aplica los cambios indicados en `datos` (nombre, email, datos_contacto, experiencias, educación, habilidades, cv_url).  
+  - Actualiza la fecha de modificación y persiste los cambios.  
 
-PerfilRepositoryImpl (Repository Impl)
+- `ConfigurarPreferenciasPostulanteHandler`  
+  - `handle(command: ConfigurarPreferenciasPostulanteCommand)`  
+  - Recupera el `PerfilAggregate` correspondiente.  
+  - Aplica las preferencias (incluyendo cambios de estado).  
+  - Persiste el nuevo estado y configuración.  
 
-Implementa la persistencia de perfiles (postulantes y empresas).
+> En la capa de aplicación, estos mismos handlers son reutilizados para los endpoints de `/perfil` y `/perfil/candidato` mediante alias, sin duplicar la lógica de negocio.  
 
-Métodos:
 
-guardar(perfil)
+##### **Queries**
 
-obtenerPorId(perfilId)
+- `ObtenerPerfilQuery`  
+  - Datos: `perfil_id: UUID`.  
+  - Intención: recuperar el detalle de un perfil específico.  
 
-obtenerPorTipo(tipoPerfil)
+- `ListarPerfilesPorTipoQuery`  
+  - Datos: `tipo_perfil: TipoPerfilEnum`.  
+  - Intención: listar todos los perfiles de un tipo determinado (por ejemplo, postulantes).  
 
-eliminar(perfilId)
 
-PreferenciaRepositoryImpl (Repository Impl)
+##### **Query Handlers**
 
-Implementa la persistencia de las preferencias de los perfiles.
+- `ObtenerPerfilQueryHandler`  
+  - `handle(query: ObtenerPerfilQuery)`  
+  - Consulta el repositorio de perfil.  
+  - Devuelve los datos del perfil (datos_personales, estado, fechas) en una estructura serializable.  
 
-Métodos:
+- `ListarPerfilesPorTipoQueryHandler`  
+  - `handle(query: ListarPerfilesPorTipoQuery)`  
+  - Consulta el repositorio para obtener todos los perfiles de un tipo en particular.  
+  - Devuelve una lista de estructuras con información básica de cada perfil.  
 
-guardar(preferencia)
 
-obtenerPorPerfil(perfilId)
 
-actualizar(preferencia)
+#### **2.6.4.4. Infrastructure Layer** 
 
-Servicios externos
+##### **Repository: PerfilRepositoryImpl**
 
-ValidacionIdentidadService: Verifica la autenticidad de los datos del postulante o empresa.
+**Responsabilidad**  
+Implementación del repositorio de perfiles usando SQLAlchemy y PostgreSQL.
 
-Métodos:
+**Métodos implementados (principales)**  
+- `crear(perfil: Perfil) -> UUID`  
+  - Persiste un nuevo perfil en la base de datos.  
+- `actualizar_datos(perfil: Perfil) -> None`  
+  - Actualiza los datos personales y de candidato de un perfil existente.  
+- `configurar_preferencias(perfil: Perfil) -> None`  
+  - Persiste los cambios de estado y preferencias.  
+- `obtener_por_id(perfil_id: UUID) -> dict`  
+  - Recupera los datos de un perfil y los mapea a la estructura utilizada por los query handlers.  
+- `listar_por_tipo(tipo_perfil: TipoPerfilEnum) -> List[dict]`  
+  - Devuelve todos los perfiles de un tipo específico (por ejemplo, postulantes).  
 
-validarDocumento(numeroDocumento, tipoDocumento)
 
-validarEmpresa(ruc, razonSocial)
+##### **ORM Models (PerfilModel)**
 
-**AlmacenamientoService:** Maneja archivos asociados al perfil (fotos de postulante, logos de empresa).
+**Representación general**  
+Modelo SQLAlchemy que mapea la tabla de perfiles:
 
-**Métodos:**
+- `id: String(36)` (PK, UUID)  
+- `tipo_perfil: String`  
+- `datos_personales: JSON`  
+- `preferencias: JSON`  
+- `estado: String`  
+- `fecha_creacion: DateTime`  
+- `fecha_actualizacion: DateTime`  
 
-subirArchivo(ruta, archivo)
+Este modelo se apoya en:  
+- `Base` y `engine` definidos en `app.infrastructure.database.connection`.  
+- `SessionLocal` para la gestión de sesiones.  
 
-obtenerArchivo(ruta)
 
-eliminarArchivo(ruta)
+##### **Persistencia**
+
+- Base de datos PostgreSQL.  
+- Configuración de conexión centralizada en `app.config.Settings` (usuario, password, host, puerto, nombre de base de datos y `DATABASE_URL`).  
+- Creación de tablas a través de `Base.metadata.create_all(bind=engine)` en `main.py`.  
+- El router `/api/perfil` interactúa exclusivamente con el `PerfilRepositoryImpl` a través de los command/query handlers, manteniendo la separación entre capas.  
+
 
 #### **2.6.4.5. Bounded Context Software Architecture Component Level Diagrams**
 
