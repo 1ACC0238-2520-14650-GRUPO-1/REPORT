@@ -34,7 +34,7 @@
  
  </div>
  
- <p align="center"><strong>Octubre, 2025</strong></p>
+ <p align="center"><strong>Noviembre, 2025</strong></p>
 
  
 **REGISTRO DE VERSIONES DEL INFORME**
