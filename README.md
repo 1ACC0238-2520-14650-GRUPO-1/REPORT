@@ -1,20 +1,18 @@
 <div style="
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
   text-align: center;
   font-family: Arial, sans-serif;
 ">
 
-  <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/UPC_logo_transparente.png" width="150" style="margin-bottom: 30px;"/>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/UPC_logo_transparente.png"
+       alt="UPC-LOGO" width="150" style="margin-bottom: 30px;"/>
 
   <h2 style="margin: 5px 0;">Universidad Peruana de Ciencias Aplicadas</h2>
   <h3 style="margin: 5px 0;">Ingeniería de Software</h3>
 
   <p style="margin: 5px 0;">Periodo: <strong>202520</strong></p>
-  <p style="margin: 5px 0;"><strong>1ACC0238</strong> | <strong>Aplicaciones para Dispositivos Móviles</strong></p>
+  <p style="margin: 5px 0;">
+    <strong>1ACC0238</strong> | <strong>Aplicaciones para Dispositivos Móviles</strong>
+  </p>
   <p style="margin: 5px 0;">NRC: <strong>14650</strong></p>
   <p style="margin: 5px 0;">Docente: <strong>Eduardo Martin Reyes Rodríguez</strong></p>
 
@@ -34,9 +32,6 @@
   <p style="margin-top: 25px;"><em>Diciembre, 2025</em></p>
 
 </div>
-
-
-
  
 **REGISTRO DE VERSIONES DEL INFORME**
 
