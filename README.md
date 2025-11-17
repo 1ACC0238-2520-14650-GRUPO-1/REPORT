@@ -1,51 +1,39 @@
-<p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/UPC_logo_transparente.png" width="180"/>
-</p>
+<div style="
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  font-family: Arial, sans-serif;
+">
 
-<br>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/UPC_logo_transparente.png" width="150" style="margin-bottom: 30px;"/>
 
-<p align="center"><strong>Universidad Peruana de Ciencias Aplicadas</strong></p>
-<p align="center"><strong>Ingeniería de Software</strong></p>
+  <h2 style="margin: 5px 0;">Universidad Peruana de Ciencias Aplicadas</h2>
+  <h3 style="margin: 5px 0;">Ingeniería de Software</h3>
 
-<p align="center">
-  Periodo: 202520<br>
-  1ACC0238 | Aplicaciones para Dispositivos Móviles<br>
-  NRC: 14650<br>
-  Docente: Eduardo Martin Reyes Rodríguez
-</p>
+  <p style="margin: 5px 0;">Periodo: <strong>202520</strong></p>
+  <p style="margin: 5px 0;"><strong>1ACC0238</strong> | <strong>Aplicaciones para Dispositivos Móviles</strong></p>
+  <p style="margin: 5px 0;">NRC: <strong>14650</strong></p>
+  <p style="margin: 5px 0;">Docente: <strong>Eduardo Martin Reyes Rodríguez</strong></p>
 
-<p align="center">
-  <hr style="width:55%; border: 0; border-top: 1px solid #999;">
-  <hr style="width:40%; margin-top:-10px; border: 0; border-top: 1px solid #999;">
-</p>
+  <hr style="width: 50%; margin: 25px auto; border: 1px solid #999;"/>
 
-<br><br>
+  <h2 style="margin-bottom: 10px;"><strong>Informe del Trabajo Final</strong></h2>
 
-<h2 align="center">Informe del Trabajo Final</h2>
+  <p style="margin: 5px 0;">Startup: <strong>VERSS</strong></p>
+  <p style="margin: 5px 0;">Producto: <strong>LookUp</strong></p>
 
-<p align="center">Startup: <strong>VERSS</strong><br>
-Producto: <strong>LookUp</strong></p>
+  <p style="margin: 4px 0;"><code>U202311207</code> - Santiago Iván Cárdenas Concha</p>
+  <p style="margin: 4px 0;"><code>U202311334</code> - Luis Piero Rodríguez Rodríguez</p>
+  <p style="margin: 4px 0;"><code>U202123373</code> - Luis Gustavo Román Pajuelo</p>
+  <p style="margin: 4px 0;"><code>U20231C784</code> - Elvia Marcela Rodríguez Villa</p>
+  <p style="margin: 4px 0;"><code>U202311532</code> - Santiago Manuel Suárez Romero</p>
 
-<br>
-
-<h3 align="center">Team Members</h3>
-
-<div align="center">
-
-| **Member**                         | **Code**     |
-|------------------------------------|--------------|
-| Santiago Iván Cárdenas Concha      | U202311207   |
-| Luis Piero Rodríguez Rodríguez     | U202311334   |
-| Luis Gustavo Román Pajuelo         | U202123373   |
-| Elvia Marcela Rodríguez Villa      | U20231C784   |
-| Santiago Manuel Suárez Romero      | U202311532   |
+  <p style="margin-top: 25px;"><em>Diciembre, 2025</em></p>
 
 </div>
-
-<br>
-
-<p align="center"><em>Diciembre, 2025</em></p>
-
  
 **REGISTRO DE VERSIONES DEL INFORME**
 
