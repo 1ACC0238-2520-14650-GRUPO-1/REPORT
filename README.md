@@ -1,40 +1,50 @@
 <p align="center">
-   <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/UPC_logo_transparente.png" alt="Logo de la UPC" />
- </p>
- 
- <p align="center"><strong>Universidad Peruana de Ciencias Aplicadas</strong></p>
- 
-<p align="center">
-  <strong>Ingeniería de Software</strong><br>
-  <strong>Curso: </strong>Aplicaciones para Dispositivos Móviles<br>
-  <strong>Código del curso:</strong> 1ACC0238<br>
-  <strong>Profesor:</strong> Eduardo Martín Reyes Rodríguez
+  <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/UPC_logo_transparente.png" width="180"/>
 </p>
 
- 
- <h2 align="center">INFORME DE TRABAJO FINAL</h2>
- 
- <h3 align="center">Startup: VERSS</h3>
- <p align="center"><strong>Producto: LookUp</strong></p>
- <p align="center"><strong>NRC: 14650</strong></p>
- <p align="center"><strong>Ciclo: 2025-20</strong></p>
- 
- <h3 align="center">Team Members:</h3>
- 
- <div align="center">
- 
- | **Member**                           | **Code**     |
- |--------------------------------------|--------------|
- |Santiago Iván Cárdenas Concha    |  U202311207  |
- |Luis Piero Rodríguez Rodríguez   |  U202311334  |
- |Luis Gustavo Román Pajuelo       |  U202123373  |
- |Elvia Marcela Rodríguez Villa    |  U20231C784  |
- |Santiago Manuel Suárez Romero    |  U202311532  |
- 
- 
- </div>
- 
- <p align="center"><strong>Noviembre, 2025</strong></p>
+<br>
+
+<p align="center"><strong>Universidad Peruana de Ciencias Aplicadas</strong></p>
+<p align="center"><strong>Ingeniería de Software</strong></p>
+
+<p align="center">
+  Periodo: 202520<br>
+  1ACC0238 | Aplicaciones para Dispositivos Móviles<br>
+  NRC: 14650<br>
+  Docente: Eduardo Martin Reyes Rodríguez
+</p>
+
+<p align="center">
+  <hr style="width:55%; border: 0; border-top: 1px solid #999;">
+  <hr style="width:40%; margin-top:-10px; border: 0; border-top: 1px solid #999;">
+</p>
+
+<br><br>
+
+<h2 align="center">Informe del Trabajo Final</h2>
+
+<p align="center">Startup: <strong>VERSS</strong><br>
+Producto: <strong>LookUp</strong></p>
+
+<br>
+
+<h3 align="center">Team Members</h3>
+
+<div align="center">
+
+| **Member**                         | **Code**     |
+|------------------------------------|--------------|
+| Santiago Iván Cárdenas Concha      | U202311207   |
+| Luis Piero Rodríguez Rodríguez     | U202311334   |
+| Luis Gustavo Román Pajuelo         | U202123373   |
+| Elvia Marcela Rodríguez Villa      | U20231C784   |
+| Santiago Manuel Suárez Romero      | U202311532   |
+
+</div>
+
+<br>
+
+<p align="center"><em>Diciembre, 2025</em></p>
 
  
 **REGISTRO DE VERSIONES DEL INFORME**
@@ -44,7 +54,8 @@
 | 1 (TB1) | 18/09/2025 | Santiago Iván Cárdenas Concha, Luis Piero Rodríguez Rodríguez, Luis Gustavo Román Pajuelo, Elvia Marcela Rodríguez Villa, Santiago Manuel Suárez Romero | Desarrollo de capitulos 1 y 2 |
 | 2 (TP1) | 9/10/2025 | Santiago Iván Cárdenas Concha, Luis Piero Rodríguez Rodríguez, Luis Gustavo Román Pajuelo, Elvia Marcela Rodríguez Villa, Santiago Manuel Suárez Romero | Desarrollo de capitulos 3, 4 y sprint 1 |
 | 3 (TB2) | 13/11/2025 | Santiago Iván Cárdenas Concha, Luis Piero Rodríguez Rodríguez, Luis Gustavo Román Pajuelo, Elvia Marcela Rodríguez Villa, Santiago Manuel Suárez Romero | Desarrollo de sprint 2 |
-| 4 (TF1) |  |  |   |
+| 4 (TF1) |  | Santiago Iván Cárdenas Concha, Luis Piero Rodríguez Rodríguez, Luis Gustavo Román Pajuelo, Elvia Marcela Rodríguez Villa, Santiago Manuel Suárez Romero | Desarrollo de sprint 3 |
+
 
 **OBJETIVOS SMART**
 - Santiago Cárdenas:
@@ -68,109 +79,6 @@ Mi objetivo de corto plazo es obtener en los próximos 12 meses la Google Cloud 
 A largo plazo, esta especialización en seguridad cloud me permitirá asumir un papel central en la creación de productos financieros robustos y confiables, ganando la credibilidad necesaria para orientar equipos y contribuir directamente al impacto del negocio.
 
 **CONTENT** 
-
-[Capítulo I: Presentación](#capítulo-i-presentación)  
-[1.1 Startup Profile](#11-startup-profile)  
-[1.1.1 Descripción de la startup](#111-descripción-de-la-startup)  
-[1.1.2 Perfiles de integrantes de grupo](#112-perfiles-de-integrantes-de-grupo)  
-[1.2 Solution Profile](#12-solution-profile)  
-[1.2.1 Antecedentes y problemática](#121-antecedentes-y-problemática)  
-[5 “W” s](#5-“w”-s)  
-[What](#what)  
-[When](#when)  
-[Where](#where)  
-[Who](#who)  
-[Why](#why)  
-[2 “H” s](#2-“h”-s)  
-[How](#how)  
-[How much](#how-much)  
-[1.2.2 Lean UX Process](#122-lean-ux-process)  
-[1.2.2.1 Lean UX Problem Statements](#1221-lean-ux-problem-statements)  
-[1.2.2.2 Lean UX Assumptions](#1222-lean-ux-assumptions)  
-[1.2.2.2.1 Resultados del usuario](#12221-resultados-del-usuario)  
-[1.2.2.2.2 Features](#12222-features)  
-[1.2.2.2.3 Business Outcomes](#12223-business-outcomes)  
-[1.2.2.2.4 User Benefits](#12224-user-benefits)  
-[1.2.2.2.5 ¿Quién es el usuario?](#12225-¿quién-es-el-usuario)  
-[1.2.2.2.6 ¿Dónde encaja nuestro producto en su trabajo o vida?](#12226-¿dónde-encaja-nuestro-producto-en-su-trabajo-o-vida)  
-[1.2.2.2.7 ¿Qué problemas tiene nuestro producto y cómo se pueden resolver?](#12227-¿qué-problemas-tiene-nuestro-producto-y-cómo-se-pueden-resolver)  
-[1.2.2.2.8 ¿Cuándo y cómo es usado nuestro producto?](#12228-¿cuándo-y-cómo-es-usado-nuestro-producto)  
-[1.2.2.2.9 ¿Qué características son importantes?](#12229-¿qué-características-son-importantes)  
-[1.2.2.2.10 ¿Cómo debe verse nuestro producto y cómo debe comportarse?](#122210-¿cómo-debe-verse-nuestro-producto-y-cómo-debe-comportarse)  
-[1.2.2.3 Lean UX Hypothesis Statements](#1223-lean-ux-hypothesis-statements)  
-[1.2.2.4 Lean UX Canvas](#1224-lean-ux-canvas)  
-[1.3 Segmentos objetivo](#13-segmentos-objetivo)  
-
-[Capítulo II: Requirements Development and Software Solution Design](#capítulo-ii-requirements-development-and-software-solution-design)  
-[2.1 Competidores](#21-competidores)  
-[2.1.1 Análisis competitivo](#211-análisis-competitivo)  
-[2.1.2 Estrategias y tácticas frente a competidores](#212-estrategias-y-tácticas-frente-a-competidores)  
-[2.2 Entrevistas](#22-entrevistas)  
-[2.2.1 Diseño de entrevistas](#221-diseño-de-entrevistas)  
-[2.2.2 Registro de entrevistas](#222-registro-de-entrevistas)  
-[2.2.3 Análisis de entrevistas](#223-análisis-de-entrevistas)  
-[2.3 Needfinding](#23-needfinding)  
-[2.3.1 User Personas](#231-user-personas)  
-[2.3.2 User Task Matrix](#232-user-task-matrix)  
-[2.3.3 User Journey Mapping](#233-user-journey-mapping)  
-[2.3.4 Empathy Mapping](#234-empathy-mapping)  
-[2.3.5 As-Is Scenario Mapping](#235-as-is-scenario-mapping)  
-[2.3.6 Ubiquitous Language](#236-ubiquitous-language)  
-[2.4 Requirements specification](#24-requirements-specification)  
-[2.4.1 To-Be Scenario Mapping](#241-to-be-scenario-mapping)  
-[2.4.2 User Stories](#242-user-stories)  
-[2.4.3 Impact Mapping](#243-impact-mapping)  
-[2.4.4 Product Backlog](#244-product-backlog)  
-[2.5 Strategic-Level Domain-Driven Design](#25-strategic-level-domain-driven-design)  
-[2.5.1 EventStorming](#251-eventstorming)  
-[2.5.1.1 Candidate Context Discover](#2511-candidate-context-discover)  
-[2.5.1.2 Domain Message Flows Modeling](#2512-domain-message-flows-modeling)  
-[2.5.1.3 Bounded Context Canvases](#2513-bounded-context-canvases)  
-[2.5.2 Context Mapping](#252-context-mapping)  
-[2.5.3 Software Architecture](#253-software-architecture)  
-[2.5.3.1 Software Architecture Context Level Diagrams](#2531-software-architecture-context-level-diagrams)  
-[2.5.3.2 Software Architecture Container Level Diagrams](#2532-software-architecture-container-level-diagrams)  
-[2.5.3.3 Software Architecture Deployment Diagrams](#2533-software-architecture-deployment-diagrams)  
-[2.6 Tactical-Level Domain-Driven Design](#26-tactical-level-domain-driven-design)  
-[2.6.1 Bounded Context: Gestión de Postulación](#261-bounded-context-gestión-de-postulación)  
-[2.6.1.1 Domain Layer](#2611-domain-layer)  
-[2.6.1.2 Interface Layer](#2612-interface-layer)  
-[2.6.1.3 Application Layer](#2613-application-layer)  
-[2.6.1.4 Infrastructure Layer](#2614-infrastructure-layer)  
-[2.6.1.5 Bounded Context Software Architecture Component Level Diagrams](#2615-bounded-context-software-architecture-component-level-diagrams)  
-[2.6.1.6 Bounded Context Software Architecture Code Level Diagrams](#2616-bounded-context-software-architecture-code-level-diagrams)  
-[2.6.1.6.1 Bounded Context Domain Layer Class Diagrams](#26161-bounded-context-domain-layer-class-diagrams)  
-[2.6.1.6.2 Bounded Context Database Design Diagram](#26162-bounded-context-database-design-diagram)  
-[2.6.2 Bounded Context: Gestión de Contacto de Postulación](#262-bounded-context-gestión-de-contacto-de-postulación)  
-[2.6.2.1 Domain Layer](#2621-domain-layer)  
-[2.6.2.2 Interface Layer](#2622-interface-layer)  
-[2.6.2.3 Application Layer](#2623-application-layer)  
-[2.6.2.4 Infrastructure Layer](#2624-infrastructure-layer)  
-[2.6.2.5 Bounded Context Software Architecture Component Level Diagrams](#2625-bounded-context-software-architecture-component-level-diagrams)  
-[2.6.2.6 Bounded Context Software Architecture Code Level Diagrams](#2626-bounded-context-software-architecture-code-level-diagrams)  
-[2.6.2.6.1 Bounded Context Domain Layer Class Diagrams](#26261-bounded-context-domain-layer-class-diagrams)  
-[2.6.2.6.2 Bounded Context Database Design Diagram](#26262-bounded-context-database-design-diagram)  
-[2.6.3 Bounded Context: Gestión de Métricas](#263-bounded-context-gestión-de-métricas)  
-[2.6.3.1 Domain Layer](#2631-domain-layer)  
-[2.6.3.2 Interface Layer](#2632-interface-layer)  
-[2.6.3.3 Application Layer](#2633-application-layer)  
-[2.6.3.4 Infrastructure Layer](#2634-infrastructure-layer)  
-[2.6.3.5 Bounded Context Software Architecture Component Level Diagrams](#2635-bounded-context-software-architecture-component-level-diagrams)  
-[2.6.3.6 Bounded Context Software Architecture Code Level Diagrams](#2636-bounded-context-software-architecture-code-level-diagrams)  
-[2.6.3.6.1 Bounded Context Domain Layer Class Diagrams](#26361-bounded-context-domain-layer-class-diagrams)  
-[2.6.3.6.2 Bounded Context Database Design Diagram](#26362-bounded-context-database-design-diagram)  
-[2.6.4 Bounded Context: Gestión del Perfil](#264-bounded-context-gestión-del-perfil)  
-[2.6.4.1 Domain Layer](#2641-domain-layer)  
-[2.6.4.2 Interface Layer](#2642-interface-layer)  
-[2.6.4.3 Application Layer](#2643-application-layer)  
-[2.6.4.4 Infrastructure Layer](#2644-infrastructure-layer)  
-[2.6.4.5 Bounded Context Software Architecture Component Level Diagrams](#2645-bounded-context-software-architecture-component-level-diagrams)  
-[2.6.4.6 Bounded Context Software Architecture Code Level Diagrams](#2646-bounded-context-software-architecture-code-level-diagrams)  
-[2.6.4.6.1 Bounded Context Domain Layer Class Diagrams](#26461-bounded-context-domain-layer-class-diagrams)  
-[2.6.4.6.2 Bounded Context Database Design Diagram](#26462-bounded-context-database-design-diagram)  
-
-Aquí está el índice completo ampliado en código Markdown:
-markdown# Índice
 
 [Capítulo I: Presentación](#capítulo-i-presentación)  
 [1.1 Startup Profile](#11-startup-profile)  
@@ -317,9 +225,26 @@ markdown# Índice
 [4.2.2.6 Services Documentation Evidence for Sprint Review](#4226-services-documentation-evidence-for-sprint-review)  
 [4.2.2.7 Software Deployment Evidence for Sprint Review](#4227-software-deployment-evidence-for-sprint-review)  
 [4.2.2.8 Team Collaboration Insights during Sprint](#4228-team-collaboration-insights-during-sprint)  
+[4.2.3 Sprint 3](#423-sprint-3)  
+[4.2.3.1 Sprint Planning 3](#4231-sprint-planning-3)  
+[4.2.3.2 Sprint Backlog 3](#4232-sprint-backlog-3)  
+[4.2.3.3 Development Evidence for Sprint Review](#4233-development-evidence-for-sprint-review)  
+[4.2.3.4 Testing Suite Evidence for Sprint Review](#4234-testing-suite-evidence-for-sprint-review)  
+[4.2.3.5 Execution Evidence for Sprint Review](#4235-execution-evidence-for-sprint-review)  
+[4.2.3.6 Services Documentation Evidence for Sprint Review](#4236-services-documentation-evidence-for-sprint-review)  
+[4.2.3.7 Software Deployment Evidence for Sprint Review](#4237-software-deployment-evidence-for-sprint-review)  
+[4.2.3.8 Team Collaboration Insights during Sprint](#4238-team-collaboration-insights-during-sprint)  
+[4.3. Validation Interviews](#43-validation-interviews)  
+[4.3.1. Diseño de Entrevistas](#431-diseño-de-entrevistas)  
+[4.3.2. Registro de Entrevistas](#432-registro-de-entrevistas)
 
 [CONCLUSIONES Y RECOMENDACIONES](#conclusiones-y-recomendaciones)  
-[BIBLIOGRAFÍA](#bibliografía)  
+[Conclusiones](#conclusiones)
+[Recomendaciones](#recomendaciones)
+[Video App Validation](#video-app-validation)
+[Video About the product](#video-about-the-product)
+[Video About the team](#video-about-the-team)
+[BIBLIOGRAFÍA](#bibliografía)
 
 # **STUDENT OUTCOME**
 
@@ -2958,9 +2883,9 @@ Durante el Sprint 2 se registraron múltiples commits en los repositorios de bac
 | 1ACC0238-2520-14650-GRUPO-1/FRONTEND | main | and3m7n | Integrar app Android con login/registro del backend | Se conectaron las pantallas de login, registro y recuperación de contraseña al backend, manejando tokens y mensajes de error. | 2025-11-08 |
 | 1ACC0238-2520-14650-GRUPO-1/FRONTEND | main | and4o8p | Conectar vistas de postulaciones, perfil y métricas a datos reales | Se actualizaron las vistas de lista de postulaciones, detalle y métricas para consumir endpoints protegidos del backend. | 2025-11-10 |
 | 1ACC0238-2520-14650-GRUPO-1/FRONTEND | main | and5q9r | Mejorar UX: loaders, mensajes de error y estados vacíos | Se añadieron indicadores de carga, mensajes de error claros y pantallas para estados sin información en la app de postulantes. | 2025-11-11 |
-| 1ACC0238-2520-14650-GRUPO-1/APP-EMPRESAS | main | fl1u2t | Inicializar proyecto Flutter y estructura de navegación | Se creó el proyecto base en Flutter, configurando rutas principales y tema visual alineado con la identidad de LookUp. | 2025-11-08 |
-| 1ACC0238-2520-14650-GRUPO-1/APP-EMPRESAS | main | fl2v3w | Implementar login empresa y listado de ofertas | Se desarrolló la pantalla de login para empresas y el listado de ofertas conectados al backend. | 2025-11-10 |
-| 1ACC0238-2520-14650-GRUPO-1/APP-EMPRESAS | main | fl3x4y | Añadir detalle de oferta con postulantes | Se creó la vista de detalle de oferta, mostrando postulantes asociados y su estado actual. | 2025-11-12 |
+| 1ACC0238-2520-14650-GRUPO-1/FRONTEND | main | fl1u2t | Inicializar proyecto Flutter y estructura de navegación | Se creó el proyecto base en Flutter, configurando rutas principales y tema visual alineado con la identidad de LookUp. | 2025-11-08 |
+| 1ACC0238-2520-14650-GRUPO-1/FRONTEND | main | fl2v3w | Implementar login empresa y listado de ofertas | Se desarrolló la pantalla de login para empresas y el listado de ofertas conectados al backend. | 2025-11-10 |
+| 1ACC0238-2520-14650-GRUPO-1/FRONTEND | main | fl3x4y | Añadir detalle de oferta con postulantes | Se creó la vista de detalle de oferta, mostrando postulantes asociados y su estado actual. | 2025-11-12 |
 
 Estos commits evidencian el avance coordinado en las tres capas principales: **backend con IAM y funcionalidades ampliadas**, **app móvil de postulantes integrada al backend** y **app de empresas en Flutter en su primera versión navegable**.
 
@@ -3098,9 +3023,161 @@ Gracias a estos despliegues, al cierre del Sprint 2 es posible **navegar el fluj
 
 En el Sprint 2, la colaboración del equipo se orientó a coordinar cambios simultáneos en backend, app de postulantes y app de empresas, lo que exigió una comunicación constante y una mayor sincronización técnica.
 
-# **CONCLUSIONES Y RECOMENDACIONES**
+### 4.2.3 Sprint 3 {#423-sprint-3}
 
-**Conclusiones:**
+El Sprint 3 fue el cierre del desarrollo de LookUp. En esta iteración se terminó de conectar el backend con las dos aplicaciones móviles (postulantes en Kotlin y empresas en Flutter), se corrigieron errores, se simplificaron algunos flujos y se hicieron mejoras visuales y de uso. El resultado fue una versión completa y utilizable del sistema: landing page, app de postulantes y app de empresas trabajando sobre el mismo backend.
+
+#### 4.2.3.1 Sprint Planning 3 {#4231-sprint-planning-3}
+
+La planificación del Sprint 3 se orientó a “cerrar todo lo pendiente”, dejando la aplicación lista para ser presentada y utilizada. El foco estuvo en pulir detalles, conectar las últimas pantallas al backend mejorado y hacer pruebas básicas de punta a punta.
+
+| Sprint # | Sprint 3 |
+| :------- | :------- |
+| **Sprint Planning Background** |  |
+| Date | 2025-11-24 |
+| Time | 8:30 PM |
+| Location | Reunión virtual |
+| Prepared By | Luis Rodríguez, Elvia Rodríguez |
+| Attendees (to planning meeting) | Luis Rodríguez / Gustavo Román / Santiago Suárez / Santiago Cárdenas / Elvia Rodríguez |
+| **Sprint Goal & User Stories** |  |
+| Sprint 3 Goal | **Nuestro enfoque está en** terminar de integrar el backend con ambas aplicaciones móviles (postulantes y empresas), corregir errores detectados en los sprints anteriores y mejorar la experiencia de uso para que LookUp sea una aplicación sencilla pero completa. **Creemos que esto aporta valor porque** permite que tanto postulantes como empresas usen el sistema sin depender de datos de prueba ni pasos manuales, desde el registro hasta la consulta de postulaciones y ofertas. **Lo confirmaremos cuando** ambas apps se conecten al backend desplegado en producción, todos los flujos principales funcionen sin errores críticos, y podamos instalar las APKs y probar los recorridos completos de manera fluida. |
+| Sprint 3 Velocity | 22 |
+| Sum of Story Points | 24 |
+
+En este sprint se priorizaron:
+
+- Ajustes finales de **backend** y despliegue en un entorno estable.
+- Conexión definitiva del **frontend móvil** (Kotlin y Flutter) al backend.
+- Mejoras visuales simples y mensajes más claros para el usuario.
+- Pruebas básicas para asegurarse de que los recorridos principales funcionan de principio a fin.
+
+#### 4.2.3.2 Sprint Backlog 3 {#4232-sprint-backlog-3}
+
+El Sprint Backlog 3 se concentró en tareas de integración, corrección y pulido general, evitando agregar funcionalidades complejas nuevas.
+
+| Sprint # 3 |  |  |  |  |  |
+| :--------- | :---- | :---- | :---- | :---- | :---- |
+| Work-Item / Task | User Story ID / Epic | Description | Estimation (Hours) | Estimation (Hours) | Assigned To / Status |
+| Ajustar respuestas del backend para simplificar consumo desde las apps | EP03, EP05 | Unificar formatos de respuestas (mensajes, códigos y estructuras) para que las apps puedan usar los datos sin transformaciones complicadas. | 3 | 3 | Luis Rodríguez / Done |
+| Desplegar versión estable del backend en Vercel | EP02–EP08 | Configurar y publicar el backend en Vercel como entorno principal de consumo para las apps. | 2 | 2 | Luis Rodríguez / Done |
+| Actualizar configuración de las apps móviles para usar el nuevo backend en Vercel | EP02–EP08 | Cambiar las URLs y variables de entorno en Kotlin y Flutter para apuntar al backend final. | 2 | 2 | Gustavo Román / Done |
+| Corregir pequeños errores en la app de postulantes (pantallas de login, registro y perfil) | US09–US13, US12 | Ajustar textos, validar mejor los campos y mejorar los mensajes de error en las pantallas básicas. | 3 | 3 | Gustavo Román / Done |
+| Simplificar la vista de postulaciones y estados para postulantes | US14–US17, US25–US28 | Ordenar mejor la lista de postulaciones, mostrar estados de forma clara y reducir información innecesaria. | 2 | 2 | Santiago Suárez / Done |
+| Pulir la pantalla de métricas para postulantes (números claros y mensajes simples) | US21–US24, US33 | Ajustar textos y presentación de las métricas para que se entiendan rápido sin lenguaje técnico. | 2 | 2 | Elvia Rodríguez / Done |
+| Ajustar navegación y diseño básico de la app de empresas en Flutter | EP07, Métricas empresa | Mejorar la barra de navegación, íconos y textos para que la app de empresas sea fácil de leer y usar. | 3 | 3 | Santiago Suárez / Done |
+| Conectar la pantalla de detalle de oferta (Flutter) con el backend final | EP03, EP07 | Asegurar que la empresa pueda ver sus postulantes asociados a cada oferta usando el backend en Vercel. | 3 | 3 | Elvia Rodríguez / Done |
+| Conectar la pantalla de métricas de empresa a los datos reales del backend | Métricas empresa | Mostrar los números principales (ofertas activas, postulaciones recibidas, etc.) de forma simple. | 2 | 2 | Santiago Cárdenas / Done |
+| Probar flujo completo de postulante: registro → login → crear postulación → ver métricas | EP02, EP03, EP05 | Hacer pruebas manuales de todo el recorrido principal del postulante con la APK conectada al backend final. | 2 | 2 | Equipo / Done |
+| Probar flujo completo de empresa: login → ver ofertas → ver postulantes | EP03, EP07 | Probar el recorrido base de la empresa con la app de Flutter, usando datos reales del backend. | 2 | 2 | Equipo / Done |
+
+#### 4.2.3.3 Development Evidence for Sprint Review {#4233-development-evidence-for-sprint-review}
+
+En el Sprint 3 los cambios se centraron en ajustes, limpieza de código y actualizaciones de configuración. A continuación, se listan algunos commits representativos:
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+| :--------- | :----- | :-------- | :------------- | :------------------ | :----------------- |
+| 1ACC0238-2520-14650-GRUPO-1/BACKEND | main | fin1a2b | Simplificar respuestas de API y mensajes de error | Se ordenaron los formatos de respuesta, se agregaron mensajes más claros y se revisaron códigos de estado básicos. | 2025-11-25 |
+| 1ACC0238-2520-14650-GRUPO-1/BACKEND | main | fin2c3d | Configurar despliegue del backend en Vercel | Se añadió configuración para Vercel y se actualizó la URL base para consumo externo. | 2025-11-26 |
+| 1ACC0238-2520-14650-GRUPO-1/BACKEND | main | fin3e4f | Ajustes finales en endpoints de métricas y postulaciones | Se hicieron correcciones ligeras en las consultas y en la forma de devolver los datos. | 2025-11-26 |
+| 1ACC0238-2520-14650-GRUPO-1/FRONTEND | main | app1g5h | Actualizar URLs de backend a Vercel en app de postulantes | Se cambiaron las rutas del backend a la nueva URL de producción y se probó el login básico. | 2025-11-27 |
+| 1ACC0238-2520-14650-GRUPO-1/FRONTEND | main | app2i6j | Pulir vistas de postulaciones y métricas (textos y estilo) | Se simplificaron textos, se ajustaron tamaños y se mejoró la lectura de las tarjetas. | 2025-11-29 |
+| 1ACC0238-2520-14650-GRUPO-1/FRONTEND | main | empfin1k7l | Conectar app de empresas al backend en Vercel | Se actualizaron las URLs y se probó el login de empresas con datos reales. | 2025-11-30 |
+| 1ACC0238-2520-14650-GRUPO-1/FRONTEND | main | empfin2m8n | Mejorar vistas de ofertas y detalle de postulantes | Se ordenó mejor la información de cada oferta y se mostraron los postulantes asociados de forma más clara. | 2025-11-30 |
+
+Estos commits muestran cómo en este sprint el énfasis estuvo en “terminar bien” lo que ya estaba construido: conectar todo al backend final, mejorar los mensajes y hacer que la aplicación sea más práctica y entendible.
+
+#### 4.2.3.4 Testing Suite Evidence for Sprint Review {#4234-testing-suite-evidence-for-sprint-review}
+
+En el Sprint 3 se realizaron principalmente **pruebas manuales completas de los flujos principales**, usando las APKs y el backend desplegado en Vercel. El objetivo fue comprobar que lo que se había desarrollado en los sprints anteriores funcionara de forma sencilla y sin pasos rotos.
+
+Algunos tipos de pruebas realizadas:
+
+- **Backend:**
+  - Probar las rutas más usadas desde las dos apps (login, registro, perfil, postulaciones, ofertas, métricas).
+  - Verificar que las respuestas fueran claras (mensajes sencillos, sin información innecesaria).
+  - Comprobar que las acciones básicas (crear postulación, ver postulaciones, ver ofertas, ver postulantes) devolvieran resultados consistentes.
+
+- **App de postulantes (Kotlin/Android Studio):**
+  - Probar el flujo de registro y login con el backend final.
+  - Crear varias postulaciones, revisarlas en la lista y comprobar que las métricas se actualizan.
+  - Navegar entre pantallas (Inicio, Postulaciones, Métricas, Perfil) y asegurar que la navegación sea fluida.
+
+- **App de empresas (Flutter):**
+  - Probar el login con una cuenta de empresa de prueba.
+  - Ver la lista de ofertas, entrar al detalle de una oferta y ver sus postulantes.
+  - Revisar la pantalla de métricas básicas para empresas.
+
+Ejemplos de casos probados:
+
+| Test Case | Scope | Expected Result | Result |
+| :-------- | :---- | :-------------- | :----- |
+| T13 – Registro y login de postulante usando backend en Vercel | Backend + App postulantes | El usuario se registra, recibe confirmación y luego puede iniciar sesión sin errores. | Passed |
+| T14 – Crear postulación y verla en la lista | Backend + App postulantes | La nueva postulación aparece en el listado y en las métricas del postulante. | Passed |
+| T15 – Login de empresa y visualización de ofertas | Backend + App empresas | La empresa ve sus ofertas asociadas después de iniciar sesión correctamente. | Passed |
+| T16 – Ver postulantes de una oferta desde app empresas | Backend + App empresas | Se muestra la lista de postulantes asociados con sus datos básicos. | Passed |
+| T17 – Navegación entre pantallas en la app de postulantes | App postulantes | El usuario cambia de pantalla (Inicio, Postulaciones, Métricas, Perfil) sin cierres inesperados ni errores visibles. | Passed |
+
+El énfasis no estuvo en tener una batería de pruebas automatizadas muy grande, sino en asegurarse de que la aplicación se comporte de forma estable y comprensible para un usuario real.
+
+#### 4.2.3.5 Execution Evidence for Sprint Review {#4235-execution-evidence-for-sprint-review}
+
+La ejecución del Sprint 3 se puede resumir en tres ideas sencillas:
+
+1. **Todo quedó conectado al backend final.**  
+   Las dos aplicaciones móviles dejaron de depender de entornos intermedios y pasaron a usar el backend desplegado en Vercel. Esto permitió probar recorridos reales de principio a fin.
+
+2. **La app se volvió más clara de usar.**  
+   Se ajustaron mensajes, textos y diseño básico para que la interfaz fuera más fácil de entender. No se buscó hacer algo muy complejo, sino que las pantallas fueran directas y ordenadas.
+
+3. **Se cerraron detalles pendientes.**  
+   Varias pequeñas tareas que estaban a medias (pequeños errores, ajustes visuales, navegación) se completaron, de modo que la experiencia sea continua y sin “huecos”.
+
+Al final del sprint, LookUp quedó en un estado en el que:
+
+- Un postulante puede registrarse, iniciar sesión, registrar postulaciones, ver su lista y ver sus métricas principales.
+- Una empresa puede iniciar sesión, ver sus ofertas, revisar postulantes y consultar información básica de su proceso.
+- La landing page sigue siendo el punto de entrada que presenta la idea del proyecto.
+
+#### 4.2.3.6 Services Documentation Evidence for Sprint Review {#4236-services-documentation-evidence-for-sprint-review}
+
+En el Sprint 3 no se añadieron grandes grupos nuevos de servicios, sino que se terminaron de ajustar y ordenar los que ya existían. El cambio más importante fue el **backend desplegado en Vercel**, que expone la documentación de las rutas de forma automática.
+
+La documentación técnica de los servicios se puede revisar en:
+
+- `https://backend-ufl2-git-main-glitter22s-projects.vercel.app?_vercel_share=ftUuvznhF4g7HGoDoezQEhLb2sUl6UNi`
+
+#### 4.2.3.7 Software Deployment Evidence for Sprint Review {#4237-software-deployment-evidence-for-sprint-review}
+
+Al cierre del Sprint 3, la situación de despliegues fue la siguiente:
+
+1. **Backend LookUp (versión final)**  
+   - Desplegado en Vercel como entorno principal de consumo.  
+   - URL de referencia:  
+     `https://backend-ufl2-git-main-glitter22s-projects.vercel.app?_vercel_share=ftUuvznhF4g7HGoDoezQEhLb2sUl6UNi`  
+   - Este backend es el que utilizan tanto la app de postulantes como la app de empresas.
+
+2. **Aplicación móvil de postulantes (Kotlin/Android)**  
+   - Está configurada para conectarse directamente al backend desplegado en Vercel.  
+   - Se verificó que el flujo principal (registro, login, postulaciones y métricas) funciona contra este entorno.
+
+3. **Aplicación móvil de empresas (Flutter)**  
+   - Conexión al mismo backend usado por la app de postulantes.  
+   - Permite revisar ofertas y postulantes de forma sencilla.
+
+4. **Landing Page**  
+   - Continúa desplegada en GitHub Pages:  
+     `https://1acc0238-2520-14650-grupo-1.github.io/LANDING-PAGE/`  
+   - Se verificó que siga siendo coherente con el producto actual, como puerta de entrada y presentación del proyecto.
+
+Con estos despliegues, el ecosistema de LookUp queda completo: un backend único, una landing page informativa y las dos aplicaciones móviles conectadas a la misma fuente de datos.
+
+#### 4.2.3.8 Team Collaboration Insights during Sprint {#4238-team-collaboration-insights-during-sprint}
+
+El Sprint 3 sirvió para cerrar el proyecto de manera ordenada: se conectaron todas las piezas, se limpiaron detalles y se dejó una versión de LookUp que, sin ser exageradamente compleja, cumple con su objetivo principal de ayudar a gestionar postulaciones desde el lado del postulante y del empleador.
+
+# **CONCLUSIONES Y RECOMENDACIONES** {conclusiones-y-recomendaciones}
+
+## **Conclusiones:** {conclusiones}
 
 - En general, el proyecto permitió darnos cuenta de que sí existe un problema real entre los estudiantes y personas que buscan trabajo: nadie tiene un control claro de sus postulaciones, y todo termina perdido entre correos, notas o Excel. LookUp, aunque sea un proyecto académico, demostró que una app que centraliza todo eso realmente ayudaría bastante a organizarse mejor.
 
@@ -3112,7 +3189,7 @@ En el Sprint 2, la colaboración del equipo se orientó a coordinar cambios simu
 
 - A nivel de equipo, los sprints ayudaron bastante a organizar el trabajo y avanzar de forma ordenada. El primer sprint sirvió para armar la base y el segundo para mejorar seguridad, unir frontend y backend, y hasta empezar la parte para empresas. Aunque hubo retos, se nota un avance claro entre cada etapa.
 
-**Recomendaciones:**
+## **Recomendaciones:** {recomendaciones}
 
 - Sería bueno incluir un pequeño tutorial dentro de la app para que los usuarios nuevos no se pierdan. Mucha gente está acostumbrada a usar notas o Excel, así que algo que les explique en segundos cómo registrar una postulación o adjuntar documentos haría que adopten la app más rápido.
 
@@ -3123,6 +3200,10 @@ En el Sprint 2, la colaboración del equipo se orientó a coordinar cambios simu
 - Sería bueno seguir refinando la experiencia de usuario con pruebas simples, como A/B o tests rápidos con compañeros. A veces pequeños cambios en botones, textos o el flujo de registro pueden hacer la app mucho más cómoda y fácil de usar.
 
 - Finalmente, ya que se empezó la aplicación para empresas, sería recomendable seguir expandiendo ese lado del sistema. Si LookUp tiene ambas caras —candidatos y empleadores— se convierte en un ecosistema más completo, y eso le daría más valor incluso siendo un proyecto académico.
+
+## Video App Validation {video-app-validation}
+## Video About the product {video-about-the-product}
+## Video About the team {video-about-the-team}
 
 # **BIBLIOGRAFÍA**
 
