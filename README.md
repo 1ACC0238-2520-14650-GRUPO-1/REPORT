@@ -1,7 +1,4 @@
-<div style="
-  text-align: center;
-  font-family: Arial, sans-serif;
-">
+<div align="center">
   <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/UPC_logo_transparente.png"
        alt="UPC-LOGO" width="150" style="margin-bottom: 30px;"/>
   <h2 style="margin: 5px 0;">Universidad Peruana de Ciencias Aplicadas</h2>
