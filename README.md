@@ -1,38 +1,29 @@
 <div style="
-  align: center;
+  text-align: center;
   font-family: Arial, sans-serif;
 ">
-
   <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/UPC_logo_transparente.png"
        alt="UPC-LOGO" width="150" style="margin-bottom: 30px;"/>
-
   <h2 style="margin: 5px 0;">Universidad Peruana de Ciencias Aplicadas</h2>
   <h3 style="margin: 5px 0;">Ingeniería de Software</h3>
-
   <p style="margin: 5px 0;">Periodo: <strong>202520</strong></p>
   <p style="margin: 5px 0;">
     <strong>1ACC0238</strong> | <strong>Aplicaciones para Dispositivos Móviles</strong>
   </p>
   <p style="margin: 5px 0;">NRC: <strong>14650</strong></p>
   <p style="margin: 5px 0;">Docente: <strong>Eduardo Martin Reyes Rodríguez</strong></p>
-
   <hr style="width: 50%; margin: 25px auto; border: 1px solid #999;"/>
-
   <h2 style="margin-bottom: 10px;"><strong>Informe del Trabajo Final</strong></h2>
-
   <p style="margin: 5px 0;">Startup: <strong>VERSS</strong></p>
   <p style="margin: 5px 0;">Producto: <strong>LookUp</strong></p>
-
   <p style="margin: 4px 0;"><code>U202311207</code> - Santiago Iván Cárdenas Concha</p>
   <p style="margin: 4px 0;"><code>U202311334</code> - Luis Piero Rodríguez Rodríguez</p>
   <p style="margin: 4px 0;"><code>U202123373</code> - Luis Gustavo Román Pajuelo</p>
   <p style="margin: 4px 0;"><code>U20231C784</code> - Elvia Marcela Rodríguez Villa</p>
   <p style="margin: 4px 0;"><code>U202311532</code> - Santiago Manuel Suárez Romero</p>
-
   <p style="margin-top: 25px;"><em>Diciembre, 2025</em></p>
-
 </div>
- 
+
 **REGISTRO DE VERSIONES DEL INFORME**
 
 | Versión  | Fecha  | Autores | Descripción de Modificación      |
