@@ -1,5 +1,5 @@
 <div style="
-  text-align: center;
+  align: center;
   font-family: Arial, sans-serif;
 ">
 
