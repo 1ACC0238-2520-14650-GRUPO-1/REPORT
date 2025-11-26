@@ -215,12 +215,18 @@ A largo plazo, esta especialización en seguridad cloud me permitirá asumir un 
 [4.3.1. Diseño de Entrevistas](#431-diseño-de-entrevistas)  
 [4.3.2. Registro de Entrevistas](#432-registro-de-entrevistas)
 
-[CONCLUSIONES Y RECOMENDACIONES](#conclusiones-y-recomendaciones)  
+[CONCLUSIONES Y RECOMENDACIONES](#conclusiones-y-recomendaciones)
+
 [Conclusiones](#conclusiones)
+
 [Recomendaciones](#recomendaciones)
+
 [Video App Validation](#video-app-validation)
+
 [Video About the product](#video-about-the-product)
+
 [Video About the team](#video-about-the-team)
+
 [BIBLIOGRAFÍA](#bibliografía)
 
 # **STUDENT OUTCOME**
