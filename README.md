@@ -3184,9 +3184,19 @@ El Sprint 3 sirvió para cerrar el proyecto de manera ordenada: se conectaron to
 
 - Finalmente, ya que se empezó la aplicación para empresas, sería recomendable seguir expandiendo ese lado del sistema. Si LookUp tiene ambas caras —candidatos y empleadores— se convierte en un ecosistema más completo, y eso le daría más valor incluso siendo un proyecto académico.
 
+
 ## Video App Validation {video-app-validation}
+
+
+
 ## Video About the product {video-about-the-product}
+
+
+
 ## Video About the team {video-about-the-team}
+Para conocer mejor al equipo, se elaboró un video About-the-Team con todos los integrantes, presentadose a si mismos y explicando su labor en el trabajo, asi mismo, se explicó como fue la experiencia del trabajo en equipo:
+
+Link del video About-the-Team: [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202311207_upc_edu_pe/IQB_cZThV_ZLSZjr9L7gXWsgAWnrWdZkmrIIz7jPmuEVj7M?e=9Y4iZ2&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202311207_upc_edu_pe/IQB_cZThV_ZLSZjr9L7gXWsgAWnrWdZkmrIIz7jPmuEVj7M?e=9Y4iZ2&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
 # **BIBLIOGRAFÍA**
 
